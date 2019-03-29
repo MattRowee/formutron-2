@@ -44,7 +44,8 @@ class ApplicationViews extends Component {
                         return <Login {...props} />
                     }} />
                 <Route exact path="/callback" component={Callback} />
+
             </div>
         )
-    }
+    }}
     export default ApplicationViews

@@ -5,7 +5,7 @@
             "id": 1,
             "email": "m@m",
             "password":"Password1"
-        }
+        },
         {
             "userName": "Jeff Duffield",
             "id": 2,
@@ -61,7 +61,27 @@
     "therapy": [
         {
             "id":1,
-            "name":
+            "name": "sensory integration"
+        },
+        {
+            "id":2,
+            "name": "feeding / oral-motor"
+        },
+        {
+            "id":3,
+            "name": "speech / articulation"
+        },
+        {
+            "id":4,
+            "name": "expression / receptive language"
+        },
+        {
+            "id":5,
+            "name": "pragmatic / social"
+        },
+        {
+            "id":6,
+            "name": "education / trainging / collaboration"
         }
     ]
 
