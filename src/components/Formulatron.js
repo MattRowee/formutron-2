@@ -3,7 +3,7 @@ import NavBar from "./nav/NavBar"
 import ApplicationViews from "./ApplicationViews"
 
 import "./Formulatron.css"
-import "bootstrap/dist/css/bootstrap.min.css"
+// import "bootstrap/dist/css/bootstrap.min.css"
 import auth0Client from "./authentication/Auth"
 import {withRouter} from 'react-router-dom';
 

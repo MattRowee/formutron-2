@@ -1,30 +1,54 @@
-import { Route, Redirect } from 'react-router-dom'
-import React, { Component } from "react"
+import { Route, Redirect } from "react-router-dom";
+import React, { Component } from "react";
+
+import ClientManager from "../modules/clientManager";
+import ClientList from "./clients/clientList";
+
+import NoteManager from "../modules/notesManager";
+
+import Auth0Client from "./authentication/Auth";
+import Callback from "./authentication/Callback";
+
 
 class ApplicationViews extends Component {
 
 
     state = {
         clients: [],
-        documents: []
+        notes: [],
+        environment: [],
+        therapy: []
     };
 
     isAuthenticated = () => sessionStorage.getItem("credentials") !== null || localStorage.getItem("credentials") !== null;
 
 
-        componentDidMount() {
-            const newState = {}
+    componentDidMount() {
+        const newState = {}
 
-            ClientManager.getAll()
-                .then(clients => (newState.clients = clients))
-                .then(DocumentManager.getAll)
-                .then(documents => (newState.documents = documents))
-                .then(() => this.setState(newState));
-        }
+        ClientManager.getAll()
+            .then(clients => (newState.clients = clients))
+            .then(NoteManager.getAll)
+            .then(documents => (newState.documents = documents))
+            .then(() => this.setState(newState));
+    }
 
-        render() {
+    render() {
         return (
             <div className="navBeast">
+                <Route
+                    exact
+                    path="/"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <ClientList clients={this.state.clients} />;
+                        } else {
+                            Auth0Client.signIn()
+                            return null;
+                        }
+                    }}
+                />
+                <Route exact path="/callback" component={Callback} />
                 <Route
                     exact
                     path="/clients"
@@ -38,14 +62,9 @@ class ApplicationViews extends Component {
                     }}
                 />
 
-                <Route
-                    path="/login"
-                    render={props => {
-                        return <Login {...props} />
-                    }} />
-                <Route exact path="/callback" component={Callback} />
 
             </div>
         )
-    }}
-    export default ApplicationViews
+    }
+}
+export default ApplicationViews
