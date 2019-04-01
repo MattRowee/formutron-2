@@ -3,6 +3,7 @@ import React, { Component } from "react";
 
 import ClientManager from "../modules/clientManager";
 import ClientList from "./clients/clientList";
+import ClientForm from "./clients/clientForm";
 
 import NoteManager from "../modules/notesManager";
 
@@ -22,6 +23,14 @@ class ApplicationViews extends Component {
 
     isAuthenticated = () => sessionStorage.getItem("credentials") !== null || localStorage.getItem("credentials") !== null;
 
+    addClient = clientObject =>
+        ClientManager.postClient(clientObject)
+            .then(() => ClientManager.getAll())
+            .then(clients =>
+                this.setState({
+                    clients: clients
+                })
+            );
 
     componentDidMount() {
         const newState = {}
@@ -29,38 +38,49 @@ class ApplicationViews extends Component {
         ClientManager.getAll()
             .then(clients => (newState.clients = clients))
             .then(NoteManager.getAll)
-            .then(documents => (newState.documents = documents))
+            .then(notes => (newState.notes = notes))
             .then(() => this.setState(newState));
     }
 
     render() {
         return (
             <div className="navBeast">
+                <Route exact path="/callback" component={Callback} />
                 <Route
                     exact
                     path="/"
                     render={props => {
                         if (Auth0Client.isAuthenticated()) {
-                            return <ClientList clients={this.state.clients} />;
+                            return <ClientList {...props} clients={this.state.clients} />;
                         } else {
                             Auth0Client.signIn()
                             return null;
                         }
                     }}
                 />
-                <Route exact path="/callback" component={Callback} />
                 <Route
                     exact
                     path="/clients"
                     render={props => {
-                        if (Auth0Client.isAuthenticated()) {
-                            return <ClientList {...props} clients={this.state.clients} />;
-                        } else {
-                            Auth0Client.signIn();
-                            return null;
-                        }
+                        return this.isAuthenticated() ? (
+                            <ClientList {...props} clients={this.state.clients} />
+                        ) : (
+                                <Redirect to="/login" />
+                            );
                     }}
                 />
+
+                <Route
+                    exact path="/clients/new"
+                    render={(props) => {
+                        return this.isAuthenticated() ? (
+                            <ClientForm {...props}
+                                addClient={this.addClient}
+                                clients={this.state.clients} />
+                        ) : (
+                                <Redirect to="/login" />
+                            )
+                    }} />
 
 
             </div>

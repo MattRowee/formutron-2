@@ -5,7 +5,7 @@ export default class ClientList extends Component {
   render() {
     return (
       <React.Fragment>
-        {/* <div className="clientButton">
+        <div className="clientButton">
           <button type="button"
             className="btn btn-success"
             onClick={() => {
@@ -15,7 +15,7 @@ export default class ClientList extends Component {
             >
             Admit Client
                     </button>
-        </div> */}
+        </div>
         <section className="clients">
             {this.props.clients.map(singleClient => (
               <ResourceCard key= {singleClient.id} resource={singleClient} route="clients"/>
