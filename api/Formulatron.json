@@ -31,16 +31,6 @@
       "address": "544 azalea blvd, Chapmanville, WV, 25704",
       "email": "marianna@gmail.com",
       "history": "dyslexia, anxiety, depression"
-    },
-    {
-      "name": "Baxter Bigsby",
-      "age": "15",
-      "phoneNumber": "555-666-5555",
-      "address": "333 meteor lane, huntington, WV, 24701",
-      "email": "baxter@bigsby.com",
-      "history": "ADD, aggressive, provokes other students, hides in bathroom.",
-      "employeeId": null,
-      "id": 3
     }
   ],
   "notes": [

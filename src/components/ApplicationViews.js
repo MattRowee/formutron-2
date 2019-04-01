@@ -4,8 +4,11 @@ import React, { Component } from "react";
 import ClientManager from "../modules/clientManager";
 import ClientList from "./clients/clientList";
 import ClientForm from "./clients/clientForm";
+import ClientDetail from "./clients/clientDetail";
+import Client from "./clients/client"
 
 import NoteManager from "../modules/notesManager";
+import NoteList from "./notes/noteList"
 
 import Auth0Client from "./authentication/Auth";
 import Callback from "./authentication/Callback";
@@ -23,6 +26,11 @@ class ApplicationViews extends Component {
 
     isAuthenticated = () => sessionStorage.getItem("credentials") !== null || localStorage.getItem("credentials") !== null;
 
+
+    // ///////////////////////////////////////////////////////////
+    ////////////// API FUNCTIONS FOR CLIENTS ///////////////////////
+    /////////////////////////////////////////////////////////////
+
     addClient = clientObject =>
         ClientManager.postClient(clientObject)
             .then(() => ClientManager.getAll())
@@ -31,6 +39,33 @@ class ApplicationViews extends Component {
                     clients: clients
                 })
             );
+    deleteClient = id => {
+        return ClientManager.deleteClient(id).then(clients =>
+            this.setState({
+                clients: clients
+            })
+        );
+    };
+
+    ///////////////////////////////////////////////////////////
+    ////////////// API FUNCTIONS FOR NOTES ///////////////////////
+    /////////////////////////////////////////////////////////////
+
+    addNote = noteObject =>
+        NoteManager.postNote(noteObject)
+            .then(() => NoteManager.getAll())
+            .then(notes =>
+                this.setState({
+                    notes: notes
+                })
+            );
+    deleteNote = id => {
+        return NoteManager.deleteNote(id).then(notes =>
+            this.setState({
+                notes: notes
+            })
+        );
+    };
 
     componentDidMount() {
         const newState = {}
@@ -81,6 +116,37 @@ class ApplicationViews extends Component {
                                 <Redirect to="/login" />
                             )
                     }} />
+                {/* <Route
+                    exact path="/clients/:clientId(\d+)"
+                    render={(props) => {
+                        return this.isAuthenticated() ? (
+                            <ClientDetail {...props}
+                                deleteClient={this.deleteClient}
+                                clients={this.state.clients} />
+                            // <NoteList {...props}
+                            //     addNote={this.addNote}
+                            //     // clients={this.state.clients}
+                            //     notes={this.state.notes} />
+                        ) : (
+                                <Redirect to="/login" />
+                            )
+                    }} /> */}
+                <Route
+                    exact path="/clients/:clientId(\d+)"
+                    render={props => {
+                        return this.isAuthenticated() ? (
+                            <Client
+                                {...props}
+                                deleteClient={this.deleteClient}
+                                clients={this.state.clients}
+                                addNote={this.addNote}
+                                notes={this.state.notes}
+                            />
+                        ) : (
+                            <Redirect to="/login" />
+                        )
+                    }}
+                />
 
 
             </div>

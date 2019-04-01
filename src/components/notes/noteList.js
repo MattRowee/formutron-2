@@ -1,30 +1,27 @@
 import React, {Component} from 'react'
 import ResourceCard from "../generics/ResourceCard";
 
-export default class ClientList extends Component {
+export default class NoteList extends Component {
   render() {
     return (
       <React.Fragment>
-        <section className="clients">
-            {this.props.clients.map(singleClient => (
-              <ResourceCard key= {singleClient.id} resource={singleClient} route="clients"/>
+
+        <section className="notes">
+            {this.props.notes.map(singleNote => (
+              <ResourceCard key= {singleNote.id} resource={singleNote} route="notes"/>
             ))}
 
         </section>
-        <div className="clientButton">
+        <div className="noteButton">
           <button type="button"
             className="btn btn-success"
             onClick={() => {
-              this.props.history.push("/clients/new")
+              this.props.history.push("/notes/new")
             }
             }
             >
-            Admit Client
+            Create Documentation
                     </button>
         </div>
         </React.Fragment>
         )}}
-
-
-
-
