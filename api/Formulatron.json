@@ -1,0 +1,88 @@
+{
+    "employees": [
+        {
+            "userName": "Matt Rowe",
+            "id": 1,
+            "email": "m@m",
+            "password":"Password1"
+        },
+        {
+            "userName": "Jeff Duffield",
+            "id": 2,
+            "email": "d@d",
+            "password":"Password2"
+        }
+    ],
+    "clients": [
+        {
+            "id": 1,
+            "name": "Orlo Jamos",
+            "age": "11",
+            "phone": "304-111-1111",
+            "address": "555 magnolia blvd, Chapmanville, WV, 25704",
+            "email": "orlo@gmail.com",
+            "history": "ODD, aggressive, runs away and climbs buildings when upset"
+        },
+        {
+            "id": 2,
+            "name": "Marianna Gabriella",
+            "age": "11",
+            "phone": "304-222-2222",
+            "address": "544 azalea blvd, Chapmanville, WV, 25704",
+            "email": "marianna@gmail.com",
+            "history": "dyslexia, anxiety, depression"
+        }
+    ],
+    "notes": [
+        {
+            "id": 1,
+            "date": "1/01/2019",
+            "maladaptivePattern": "",
+            "symptoms": "",
+            "copingSkills": "",
+            "accompanied": false
+        }
+    ],
+    "environment": [
+        {
+            "id": 1,
+            "name": "school"
+        },
+        {
+            "id": 2,
+            "name": "home"
+        },
+        {
+            "id": 3,
+            "name": "clinic"
+        }
+
+    ],
+    "therapy": [
+        {
+            "id":1,
+            "name": "sensory integration"
+        },
+        {
+            "id":2,
+            "name": "feeding / oral-motor"
+        },
+        {
+            "id":3,
+            "name": "speech / articulation"
+        },
+        {
+            "id":4,
+            "name": "expression / receptive language"
+        },
+        {
+            "id":5,
+            "name": "pragmatic / social"
+        },
+        {
+            "id":6,
+            "name": "education / trainging / collaboration"
+        }
+    ]
+
+}
