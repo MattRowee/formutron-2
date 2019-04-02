@@ -18,7 +18,7 @@
       "id": 1,
       "name": "Orlo Amos",
       "age": "11",
-      "phoneNumber": "304-111-1111",
+      "phoneNumber": "12345879",
       "address": "555 magnolia blvd, Chapmanville, WV, 25704",
       "email": "orlo@gmail.com",
       "history": "ODD, aggressive, runs away and climbs buildings when upset",
@@ -28,10 +28,11 @@
       "id": 2,
       "name": "Marianna Gabriella",
       "age": "11",
-      "phoneNumber": "304-222-2222",
+      "phoneNumber": "12345679",
       "address": "544 azalea blvd, Chapmanville, WV, 25704",
       "email": "marianna@gmail.com",
-      "history": "dyslexia, anxiety, depression"
+      "history": "dyslexia, anxiety, depression",
+      "employeeId": null
     }
   ],
   "notes": [
@@ -42,6 +43,17 @@
       "symptoms": "",
       "copingSkills": "",
       "accompanied": false
+    },
+    {
+      "date": "2019-04-02",
+      "maladaptivePattern": "All or nothing thinking",
+      "symptoms": "panic",
+      "copingSkills": "progressive muscle relaxation",
+      "accompanied": "on",
+      "environmentId": null,
+      "therapyId": null,
+      "clientId": null,
+      "id": 2
     }
   ],
   "environment": [
