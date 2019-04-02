@@ -39,13 +39,21 @@
     {
       "id": 1,
       "date": "1/01/2019",
-      "maladaptivePattern": "Over-generalising, magnifying and minimizing",
+      "maladaptivePattern": "",
+      "symptoms": "",
+      "copingSkills": "",
+      "accompanied": false
+    },
+    {
+      "date": "2019-04-02",
+      "maladaptivePattern": "All or nothing thinking",
       "symptoms": "panic",
-      "copingSkills": "self-monitoring, weighing pros and cons",
-      "accompanied": false,
-      "clientId": 1,
-      "environmentId": 1,
-      "therapyId": 1
+      "copingSkills": "progressive muscle relaxation",
+      "accompanied": "on",
+      "environmentId": null,
+      "therapyId": null,
+      "clientId": null,
+      "id": 2
     }
   ],
   "environment": [

@@ -111,7 +111,7 @@ export default class NoteForm extends Component {
           {/* we still dont have ENVIRONMENT and THERAPY fields */}
           <button
             type="submit"
-            onClick={this.constructNewClient}
+            onClick={this.constructNewNote}
             className="btn btn-primary"
           >
             Submit

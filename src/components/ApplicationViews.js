@@ -164,12 +164,25 @@ class ApplicationViews extends Component {
                                 {...props}
                                 deleteNote={this.deleteNote}
                                 notes={this.state.notes}
+                                therapy={this.state.therapy}
+                                environment={this.state.environment}
                             />
                         ) : (
                             <Redirect tp="/login" />
                         )
                     }}
                 />
+                <Route
+                    exact path="/notes/new"
+                    render={(props) => {
+                        return this.isAuthenticated() ? (
+                            <NoteForm {...props}
+                                addNote={this.addNote}
+                                notes={this.state.notes} />
+                        ) : (
+                                <Redirect to="/login" />
+                            )
+                    }} />
 
             </div>
         )
