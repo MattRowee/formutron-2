@@ -9,7 +9,7 @@ export default class ResourceCard extends Component {
             <div className="card-body">
                 <h5 className="card-title">
                     <img src={this.props.resource.image} className="" />
-                    {this.props.resource.name}
+                    {this.props.resource.name} {this.props.resource.date}
                     <Link className="nav-link" to={`/${this.props.route}/${this.props.resource.id}`}>Details</Link>
                 </h5>
             </div>

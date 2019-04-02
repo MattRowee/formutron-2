@@ -6,6 +6,7 @@ import ClientList from "./clients/clientList";
 import ClientForm from "./clients/clientForm";
 import ClientDetail from "./clients/clientDetail";
 import Client from "./clients/client"
+import ClientEdit from "./clients/clientEdit"
 
 import NoteManager from "../modules/notesManager";
 import NoteList from "./notes/noteList"
@@ -45,6 +46,15 @@ class ApplicationViews extends Component {
                 clients: clients
             })
         );
+    };
+    updateClient = editedClientObject => {
+        return ClientManager.put(editedClientObject)
+            .then(() => ClientManager.getAll())
+            .then(clients => {
+                this.setState({
+                    clients: clients
+                })
+            });
     };
 
     ///////////////////////////////////////////////////////////
@@ -116,21 +126,7 @@ class ApplicationViews extends Component {
                                 <Redirect to="/login" />
                             )
                     }} />
-                {/* <Route
-                    exact path="/clients/:clientId(\d+)"
-                    render={(props) => {
-                        return this.isAuthenticated() ? (
-                            <ClientDetail {...props}
-                                deleteClient={this.deleteClient}
-                                clients={this.state.clients} />
-                            // <NoteList {...props}
-                            //     addNote={this.addNote}
-                            //     // clients={this.state.clients}
-                            //     notes={this.state.notes} />
-                        ) : (
-                                <Redirect to="/login" />
-                            )
-                    }} /> */}
+
                 <Route
                     exact path="/clients/:clientId(\d+)"
                     render={props => {
@@ -143,8 +139,18 @@ class ApplicationViews extends Component {
                                 notes={this.state.notes}
                             />
                         ) : (
-                            <Redirect to="/login" />
-                        )
+                                <Redirect to="/login" />
+                            )
+                    }}
+                />
+                <Route
+                    path="/clients/:clientId(\d+)/edit"
+                    render={props => {
+                        return <ClientEdit
+                            {...props}
+                            employees={this.state.employees}
+                            updateClient={this.updateClient}
+                        />
                     }}
                 />
 

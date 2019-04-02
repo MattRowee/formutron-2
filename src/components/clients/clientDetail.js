@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
 import PropTypes from 'prop-types'
-
-
 export default class ClientDetail extends Component {
     render() {
         /*
@@ -15,8 +13,6 @@ export default class ClientDetail extends Component {
         // and pops up the corresponging detail card
         const client = this.props.clients.find(a => a.id ===
             parseInt(this.props.match.params.clientId)) || {}
-
-
 
         return (
             <section className="clients">
@@ -61,30 +57,3 @@ ClientDetail.propTypes = {
     deleteClient: PropTypes.object
     }
 
-    // export default class EmployeeList extends Component {
-    //     render() {
-    //       return (
-    //       <React.Fragment>
-
-
-    //         <h1 className="employeeButton">Employees</h1>
-    //         <article className="employees">
-
-    //           {/* loops through employees and returns a resource card with employees and then maps a matching animal resource card */}
-    //           {this.props.employees.map(singleEmployee => {
-    //             return (
-    //               <div className="employees" key={singleEmployee.id}>
-    //               <ResourceCard resource={singleEmployee} route="employees" />
-    //               <section>
-    //               {this.props.animals
-    //                     .filter(animal => animal.employeeId === singleEmployee.id)
-    //                     .map(matchingAnimal => {
-    //                       return <ResourceCard key={matchingAnimal.id} resource={matchingAnimal} route="animals" />
-    //                   })}
-    //                   </section>
-    //                   </div>
-    //             )
-    //           })}
-    //        </article>
-    //       </React.Fragment>
-    //       )}}

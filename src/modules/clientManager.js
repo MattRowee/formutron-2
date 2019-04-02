@@ -9,6 +9,15 @@ export default {
       clients.json()
     );
   },
+  put(editedClient) {
+      return fetch(`${remoteURL}/clients/${editedClient.id}`, {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify(editedClient)
+            }).then(data => data.json())
+          },
   getById: id =>
     fetch(`http://localhost:5002/clients/${id}`).then(e => e.json()),
   getByEmail: email =>
