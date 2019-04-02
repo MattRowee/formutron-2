@@ -1,6 +1,8 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 
+import RegisterForm from "./authentication/login"
+
 import ClientManager from "../modules/clientManager";
 import ClientList from "./clients/clientList";
 import ClientForm from "./clients/clientForm";
@@ -79,6 +81,13 @@ class ApplicationViews extends Component {
             })
         );
     };
+    ///////////////////////////////////////////////////////////
+    ////////////// API FUNCTIONS FOR USERS ///////////////////////
+    /////////////////////////////////////////////////////////////
+
+    /////////////////////////////////////////////////////////////
+    /////////////////// API CALL FOR DATA ///////////////////////
+    /////////////////////////////////////////////////////////////
 
     componentDidMount() {
         const newState = {}
@@ -90,10 +99,28 @@ class ApplicationViews extends Component {
             .then(() => this.setState(newState));
     }
 
+    /////////////////////////////////////////////////////////////
+    ///////////// ROUTES (AUTHENTICATION&LOGIN) /////////////////
+    /////////////////////////////////////////////////////////////
+
     render() {
         return (
             <div className="navBeast">
                 <Route exact path="/callback" component={Callback} />
+                <Route
+                    exact path="/register"
+                    render={props => {
+                        return (
+                            <RegisterForm
+                                {...props}
+                                addUser={this.addUser}
+                                registerUser={this.registerUser}
+                                refreshUsers={this.refreshUsers}
+                            />
+                        );
+                    }}
+                />
+
                 <Route
                     exact
                     path="/"
@@ -106,6 +133,10 @@ class ApplicationViews extends Component {
                         }
                     }}
                 />
+
+                {/* /////////////////////////////////////////////////////////
+    ////////////////////// ROUTES (CLIENTS) /////////////////////
+    ///////////////////////////////////////////////////////////// */}
                 <Route
                     exact
                     path="/clients"
@@ -156,6 +187,10 @@ class ApplicationViews extends Component {
                         />
                     }}
                 />
+
+                {/* /////////////////////////////////////////////////////////////
+    /////////////////// ROUTES (NOTES) //////////////////////////
+    ///////////////////////////////////////////////////////////// */}
                 <Route
                     exact path="/notes/:noteId(\d+)"
                     render={props => {
@@ -168,8 +203,8 @@ class ApplicationViews extends Component {
                                 environment={this.state.environment}
                             />
                         ) : (
-                            <Redirect tp="/login" />
-                        )
+                                <Redirect tp="/login" />
+                            )
                     }}
                 />
                 <Route
