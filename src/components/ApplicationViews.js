@@ -5,14 +5,17 @@ import ClientManager from "../modules/clientManager";
 import ClientList from "./clients/clientList";
 import ClientForm from "./clients/clientForm";
 import ClientDetail from "./clients/clientDetail";
-import Client from "./clients/client"
-import ClientEdit from "./clients/clientEdit"
+import Client from "./clients/client";
+import ClientEdit from "./clients/clientEdit";
 
 import NoteManager from "../modules/notesManager";
-import NoteList from "./notes/noteList"
+import NoteList from "./notes/noteList";
+import NoteDetail from "./notes/noteDetail";
+import NoteForm from "./notes/noteForm";
 
 import Auth0Client from "./authentication/Auth";
 import Callback from "./authentication/Callback";
+
 
 
 class ApplicationViews extends Component {
@@ -153,7 +156,20 @@ class ApplicationViews extends Component {
                         />
                     }}
                 />
-
+                <Route
+                    exact path="/notes/:noteId(\d+)"
+                    render={props => {
+                        return this.isAuthenticated() ? (
+                            <NoteDetail
+                                {...props}
+                                deleteNote={this.deleteNote}
+                                notes={this.state.notes}
+                            />
+                        ) : (
+                            <Redirect tp="/login" />
+                        )
+                    }}
+                />
 
             </div>
         )
