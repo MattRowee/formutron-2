@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import ClientDetail from "../clients/clientDetail";
-// import ChatEdit from "../chat/chatEdit";
 import NoteList from "../notes/noteList";
 
 export default class Client extends Component {
@@ -10,8 +9,7 @@ export default class Client extends Component {
 
         <ClientDetail
           {...this.props}
-          deleteClient={this.deleteClient}
-        //   clients={this.state.clients} />
+
         />
 
         <NoteList

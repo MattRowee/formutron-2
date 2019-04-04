@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import ResourceCard from "../generics/ResourceCard";
-import Client from '../clients/client';
 
 export default class NoteList extends Component {
   render() {
@@ -9,8 +8,8 @@ export default class NoteList extends Component {
 
         <section className="notes">
             {this.props.notes.map(singleNote => {
-            // {
-              if(parseInt(singleNote.clientId) === parseInt(sessionStorage.getItem('clientCredentials')))
+              console.log(singleNote, singleNote.clientId, this.props.match.params.clientId)
+              if(singleNote.clientId === parseInt(this.props.match.params.clientId))
               // sessionStorage.getItem('credentials')
               {
              return  <ResourceCard key= {singleNote.id} resource={singleNote} route="notes"/>
@@ -23,7 +22,7 @@ export default class NoteList extends Component {
           <button type="button"
             className="btn btn-success"
             onClick={() => {
-              this.props.history.push("/notes/new")
+              this.props.history.push(`/notes/new/${this.props.match.params.clientId}`)
             }
             }
             >

@@ -43,37 +43,70 @@
       "userId": "1"
     },
     {
-      "name": "TESTjerryClient1",
-      "age": "TESTjerryClient1",
-      "phoneNumber": "TESTjerryClient1",
-      "address": "TESTjerryClient1",
-      "email": "TESTjerryClient1",
-      "history": "TESTjerryClient1",
-      "userId": "4",
-      "id": 7
+      "id": 3,
+      "name": "jerry's client 1(still)",
+      "age": "",
+      "phoneNumber": "",
+      "address": "",
+      "email": "",
+      "history": "",
+      "userId": "4"
     },
     {
-      "name": "TESTjerryClient2",
-      "age": "TESTjerryClient2",
-      "phoneNumber": "TESTjerryClient2",
-      "address": "TESTjerryClient2",
-      "email": "TESTjerryClient2",
-      "history": "TESTjerryClient2",
+      "name": "jerry's client 2",
+      "age": "",
+      "phoneNumber": "",
+      "address": "",
+      "email": "",
+      "history": "",
       "userId": "4",
-      "id": 8
+      "id": 4
     }
   ],
   "notes": [
     {
       "date": "2019-04-04",
-      "maladaptivePattern": "JC1N1",
-      "symptoms": "JC1N1",
-      "copingSkills": "JC1N1",
+      "maladaptivePattern": "",
+      "symptoms": "",
+      "copingSkills": "",
       "accompanied": false,
       "environmentId": "4",
       "therapyId": "4",
-      "clientId": "4",
+      "clientId": 5,
       "id": 1
+    },
+    {
+      "date": "2019-04-20",
+      "maladaptivePattern": "",
+      "symptoms": "",
+      "copingSkills": "",
+      "accompanied": false,
+      "environmentId": "4",
+      "therapyId": "4",
+      "clientId": 6,
+      "id": 2
+    },
+    {
+      "date": "2019-04-04",
+      "maladaptivePattern": "",
+      "symptoms": "",
+      "copingSkills": "",
+      "accompanied": false,
+      "environmentId": "4",
+      "therapyId": "4",
+      "clientId": 3,
+      "id": 3
+    },
+    {
+      "date": "2019-04-20",
+      "maladaptivePattern": "",
+      "symptoms": "",
+      "copingSkills": "",
+      "accompanied": false,
+      "environmentId": "4",
+      "therapyId": "4",
+      "clientId": 4,
+      "id": 4
     }
   ],
   "environment": [

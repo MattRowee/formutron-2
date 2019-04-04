@@ -148,7 +148,11 @@ class ApplicationViews extends Component {
                     path="/clients"
                     render={props => {
                         return this.isAuthenticated() ? (
-                            <ClientList {...props} clients={this.state.clients} />
+                            <ClientList
+                            {...props}
+                            clients={this.state.clients}
+                            deleteClient={this.deleteClient}
+                             />
                         ) : (
                                 <Redirect to="/login" />
                             );
@@ -188,7 +192,7 @@ class ApplicationViews extends Component {
                     render={props => {
                         return <ClientEdit
                             {...props}
-                            employees={this.state.employees}
+                            clients={this.state.clients}
                             updateClient={this.updateClient}
                         />
                     }}
@@ -214,7 +218,7 @@ class ApplicationViews extends Component {
                     }}
                 />
                 <Route
-                    exact path="/notes/new"
+                    exact path="/notes/new/:clientId(\d+)"
                     render={(props) => {
                         return this.isAuthenticated() ? (
                             <NoteForm {...props}

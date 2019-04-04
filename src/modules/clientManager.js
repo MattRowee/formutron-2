@@ -37,10 +37,8 @@ export default {
       },
       body: JSON.stringify(newClient)
     }).then(data => data.json())
-    .then(parsedClient => {
-      sessionStorage.setItem("clientCredentials", parsedClient.id)
-    })
-  }
-};
+
+    }}
+
 
 

@@ -41,13 +41,14 @@ export default class NoteForm extends Component {
         ///how to grab these values?
         environmentId: sessionStorage.getItem("credentials"),
         therapyId: sessionStorage.getItem("credentials"),
-        clientId: sessionStorage.getItem("credentials")
+        clientId: parseInt(this.props.match.params.clientId)
       };
 
       // Create the animal and redirect user to animal list
       this.props
         .addNote(note)
-        .then(() => this.props.history.push("/notes"));
+        .then(() => this.props.history.push("/"))
+        console.log(this.props)
   };
 
   render() {
