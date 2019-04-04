@@ -30,6 +30,10 @@ class ApplicationViews extends Component {
         therapy: []
     };
 
+    // ///////////////////////////////////////////////////////////
+    ////// authenticate and get credentialed storage /////////////
+    //////////////do i need this?????/////////////////////////////
+
     isAuthenticated = () => sessionStorage.getItem("credentials") !== null || localStorage.getItem("credentials") !== null;
 
 
@@ -41,6 +45,7 @@ class ApplicationViews extends Component {
         ClientManager.postClient(clientObject)
             .then(() => ClientManager.getAll())
             .then(clients =>
+
                 this.setState({
                     clients: clients
                 })
@@ -106,6 +111,7 @@ class ApplicationViews extends Component {
     render() {
         return (
             <div className="navBeast">
+
                 <Route exact path="/callback" component={Callback} />
                 <Route
                     exact path="/register"

@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import ResourceCard from "../generics/ResourceCard";
 
 export default class ClientList extends Component {
@@ -6,9 +6,13 @@ export default class ClientList extends Component {
     return (
       <React.Fragment>
         <section className="clients">
-            {this.props.clients.map(singleClient => (
-              <ResourceCard key= {singleClient.id} resource={singleClient} route="clients"/>
-            ))}
+
+          {this.props.clients.map(singleClient => {
+            if (singleClient.userId === sessionStorage.getItem('credentials')) {
+              return <ResourceCard key={singleClient.id} resource={singleClient} route="clients" />
+            }
+          }
+          )}
 
         </section>
         <div className="clientButton">
@@ -18,12 +22,14 @@ export default class ClientList extends Component {
               this.props.history.push("/clients/new")
             }
             }
-            >
+          >
             Admit Client
                     </button>
         </div>
-        </React.Fragment>
-        )}}
+      </React.Fragment>
+    )
+  }
+}
 
 
 

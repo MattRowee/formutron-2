@@ -16,6 +16,7 @@ export default class Client extends Component {
 
         <NoteList
         {...this.props}
+          clients={this.props.clients}
           notes={this.props.notes}
           addNote={this.props.addNote}
 

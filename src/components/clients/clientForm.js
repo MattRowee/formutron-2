@@ -10,7 +10,7 @@ export default class ClientForm extends Component {
     address: "",
     email: "",
     history: "",
-    employeeId: ""
+    userId: ""
   };
 
 
@@ -30,6 +30,7 @@ export default class ClientForm extends Component {
      */
   constructNewClient = evt => {
     evt.preventDefault();
+
       const client = {
         name: this.state.clientName,
         age: this.state.age,
@@ -38,14 +39,21 @@ export default class ClientForm extends Component {
         email: this.state.email,
         history: this.state.history,
         // Make sure the employeeId is saved to the database as a number since it is a foreign key.
-        employeeId: parseInt(this.state.employeeId)
+        userId: sessionStorage.getItem("credentials")
       };
 
-      // Create the animal and redirect user to animal list
+      // set item on the clientId to retrieve later in note form
+      // this.props.then(this.id.sessionStorage.setItem("client-credentials"),
+
+      // Create the client and redirect user to animal list
       this.props
         .addClient(client)
-        .then(() => this.props.history.push("/clients"));
+        .then(() => this.props.history.push("/clients"))
+
   };
+
+
+
 
   render() {
     return (

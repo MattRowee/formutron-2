@@ -1,16 +1,24 @@
 {
   "users": [
     {
-      "userName": "Matt Rowe",
-      "id": 1,
-      "email": "m@m.com",
-      "password": "Password1"
+      "aud": "auth0|5ca4f51672b3a411464fd83a",
+      "name": "matt",
+      "id": 1
     },
     {
-      "userName": "Jeff Duffield",
-      "id": 2,
-      "email": "d@d.com",
-      "password": "Password2"
+      "aud": "auth0|5ca4f5656b1b23115298d5db",
+      "name": "test",
+      "id": 2
+    },
+    {
+      "aud": "auth0|5ca4fb4afcf14510ff547754",
+      "name": "mike",
+      "id": 3
+    },
+    {
+      "aud": "auth0|5ca50eeafcf14510ff5478a8",
+      "name": "jerry",
+      "id": 4
     }
   ],
   "clients": [
@@ -22,7 +30,7 @@
       "address": "555 magnolia blvd, Chapmanville, WV, 25704",
       "email": "orlo@gmail.com",
       "history": "ODD, aggressive, runs away and climbs buildings when upset",
-      "employeeId": null
+      "userId": "1"
     },
     {
       "id": 2,
@@ -32,39 +40,40 @@
       "address": "544 azalea blvd, Chapmanville, WV, 25704",
       "email": "marianna@gmail.com",
       "history": "dyslexia, anxiety, depression",
-      "employeeId": null
+      "userId": "1"
+    },
+    {
+      "name": "TESTjerryClient1",
+      "age": "TESTjerryClient1",
+      "phoneNumber": "TESTjerryClient1",
+      "address": "TESTjerryClient1",
+      "email": "TESTjerryClient1",
+      "history": "TESTjerryClient1",
+      "userId": "4",
+      "id": 7
+    },
+    {
+      "name": "TESTjerryClient2",
+      "age": "TESTjerryClient2",
+      "phoneNumber": "TESTjerryClient2",
+      "address": "TESTjerryClient2",
+      "email": "TESTjerryClient2",
+      "history": "TESTjerryClient2",
+      "userId": "4",
+      "id": 8
     }
   ],
   "notes": [
     {
-      "id": 1,
-      "date": "1/01/2019",
-      "maladaptivePattern": "",
-      "symptoms": "",
-      "copingSkills": "",
-      "accompanied": false
-    },
-    {
-      "date": "2019-04-02",
-      "maladaptivePattern": "surrender",
-      "symptoms": "depression, anxiety",
-      "copingSkills": "self-monitoring, cognitive restructuring",
-      "accompanied": "on",
-      "environmentId": null,
-      "therapyId": null,
-      "clientId": null,
-      "id": 2
-    },
-    {
-      "date": "2019-04-02",
-      "maladaptivePattern": "Surrender",
-      "symptoms": "panic",
-      "copingSkills": "self-monitoring, cognitive restructuring",
+      "date": "2019-04-04",
+      "maladaptivePattern": "JC1N1",
+      "symptoms": "JC1N1",
+      "copingSkills": "JC1N1",
       "accompanied": false,
-      "environmentId": null,
-      "therapyId": null,
-      "clientId": null,
-      "id": 3
+      "environmentId": "4",
+      "therapyId": "4",
+      "clientId": "4",
+      "id": 1
     }
   ],
   "environment": [
