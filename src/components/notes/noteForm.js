@@ -37,16 +37,18 @@ export default class NoteForm extends Component {
         symptoms: this.state.symptoms,
         copingSkills: this.state.copingSkills,
         accompanied: this.state.accompanied,
-        environmentId: parseInt(this.state.environmentId),
-        therapyId: parseInt(this.state.therapyId),
-        // Make sure the employeeId is saved to the database as a number since it is a foreign key.
-        clientId: parseInt(this.state.employeeId)
+
+        ///how to grab these values?
+        environmentId: sessionStorage.getItem("credentials"),
+        therapyId: sessionStorage.getItem("credentials"),
+        clientId: parseInt(this.props.match.params.clientId)
       };
 
       // Create the animal and redirect user to animal list
       this.props
         .addNote(note)
-        .then(() => this.props.history.push("/notes"));
+        .then(() => this.props.history.push("/"))
+        console.log(this.props)
   };
 
   render() {

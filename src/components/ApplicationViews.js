@@ -1,6 +1,8 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 
+import RegisterForm from "./authentication/login"
+
 import ClientManager from "../modules/clientManager";
 import ClientList from "./clients/clientList";
 import ClientForm from "./clients/clientForm";
@@ -28,6 +30,10 @@ class ApplicationViews extends Component {
         therapy: []
     };
 
+    // ///////////////////////////////////////////////////////////
+    ////// authenticate and get credentialed storage /////////////
+    //////////////do i need this?????/////////////////////////////
+
     isAuthenticated = () => sessionStorage.getItem("credentials") !== null || localStorage.getItem("credentials") !== null;
 
 
@@ -39,6 +45,7 @@ class ApplicationViews extends Component {
         ClientManager.postClient(clientObject)
             .then(() => ClientManager.getAll())
             .then(clients =>
+
                 this.setState({
                     clients: clients
                 })
@@ -79,6 +86,13 @@ class ApplicationViews extends Component {
             })
         );
     };
+    ///////////////////////////////////////////////////////////
+    ////////////// API FUNCTIONS FOR USERS ///////////////////////
+    /////////////////////////////////////////////////////////////
+
+    /////////////////////////////////////////////////////////////
+    /////////////////// API CALL FOR DATA ///////////////////////
+    /////////////////////////////////////////////////////////////
 
     componentDidMount() {
         const newState = {}
@@ -90,10 +104,29 @@ class ApplicationViews extends Component {
             .then(() => this.setState(newState));
     }
 
+    /////////////////////////////////////////////////////////////
+    ///////////// ROUTES (AUTHENTICATION&LOGIN) /////////////////
+    /////////////////////////////////////////////////////////////
+
     render() {
         return (
             <div className="navBeast">
+
                 <Route exact path="/callback" component={Callback} />
+                <Route
+                    exact path="/register"
+                    render={props => {
+                        return (
+                            <RegisterForm
+                                {...props}
+                                addUser={this.addUser}
+                                registerUser={this.registerUser}
+                                refreshUsers={this.refreshUsers}
+                            />
+                        );
+                    }}
+                />
+
                 <Route
                     exact
                     path="/"
@@ -106,12 +139,20 @@ class ApplicationViews extends Component {
                         }
                     }}
                 />
+
+                {/* /////////////////////////////////////////////////////////
+    ////////////////////// ROUTES (CLIENTS) /////////////////////
+    ///////////////////////////////////////////////////////////// */}
                 <Route
                     exact
                     path="/clients"
                     render={props => {
                         return this.isAuthenticated() ? (
-                            <ClientList {...props} clients={this.state.clients} />
+                            <ClientList
+                            {...props}
+                            clients={this.state.clients}
+                            deleteClient={this.deleteClient}
+                             />
                         ) : (
                                 <Redirect to="/login" />
                             );
@@ -151,11 +192,15 @@ class ApplicationViews extends Component {
                     render={props => {
                         return <ClientEdit
                             {...props}
-                            employees={this.state.employees}
+                            clients={this.state.clients}
                             updateClient={this.updateClient}
                         />
                     }}
                 />
+
+                {/* /////////////////////////////////////////////////////////////
+    /////////////////// ROUTES (NOTES) //////////////////////////
+    ///////////////////////////////////////////////////////////// */}
                 <Route
                     exact path="/notes/:noteId(\d+)"
                     render={props => {
@@ -168,12 +213,12 @@ class ApplicationViews extends Component {
                                 environment={this.state.environment}
                             />
                         ) : (
-                            <Redirect tp="/login" />
-                        )
+                                <Redirect tp="/login" />
+                            )
                     }}
                 />
                 <Route
-                    exact path="/notes/new"
+                    exact path="/notes/new/:clientId(\d+)"
                     render={(props) => {
                         return this.isAuthenticated() ? (
                             <NoteForm {...props}

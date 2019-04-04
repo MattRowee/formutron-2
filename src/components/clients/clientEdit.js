@@ -38,7 +38,7 @@ export default class AnimalEditForm extends Component {
           address: this.state.address,
           email: this.state.email,
           history: this.state.history,
-          employeeId: parseInt(this.state.employeeId)
+          userId: sessionStorage.getItem("credentials")
         };
 
     this.props

@@ -1,16 +1,24 @@
 {
-  "employees": [
+  "users": [
     {
-      "userName": "Matt Rowe",
-      "id": 1,
-      "email": "m@m",
-      "password": "Password1"
+      "aud": "auth0|5ca4f51672b3a411464fd83a",
+      "name": "matt",
+      "id": 1
     },
     {
-      "userName": "Jeff Duffield",
-      "id": 2,
-      "email": "d@d",
-      "password": "Password2"
+      "aud": "auth0|5ca4f5656b1b23115298d5db",
+      "name": "test",
+      "id": 2
+    },
+    {
+      "aud": "auth0|5ca4fb4afcf14510ff547754",
+      "name": "mike",
+      "id": 3
+    },
+    {
+      "aud": "auth0|5ca50eeafcf14510ff5478a8",
+      "name": "jerry",
+      "id": 4
     }
   ],
   "clients": [
@@ -22,7 +30,7 @@
       "address": "555 magnolia blvd, Chapmanville, WV, 25704",
       "email": "orlo@gmail.com",
       "history": "ODD, aggressive, runs away and climbs buildings when upset",
-      "employeeId": null
+      "userId": "1"
     },
     {
       "id": 2,
@@ -32,28 +40,73 @@
       "address": "544 azalea blvd, Chapmanville, WV, 25704",
       "email": "marianna@gmail.com",
       "history": "dyslexia, anxiety, depression",
-      "employeeId": null
+      "userId": "1"
+    },
+    {
+      "id": 3,
+      "name": "jerry's client 1(still)",
+      "age": "",
+      "phoneNumber": "",
+      "address": "",
+      "email": "",
+      "history": "",
+      "userId": "4"
+    },
+    {
+      "name": "jerry's client 2",
+      "age": "",
+      "phoneNumber": "",
+      "address": "",
+      "email": "",
+      "history": "",
+      "userId": "4",
+      "id": 4
     }
   ],
   "notes": [
     {
-      "id": 1,
-      "date": "1/01/2019",
+      "date": "2019-04-04",
       "maladaptivePattern": "",
       "symptoms": "",
       "copingSkills": "",
-      "accompanied": false
+      "accompanied": false,
+      "environmentId": "4",
+      "therapyId": "4",
+      "clientId": 5,
+      "id": 1
     },
     {
-      "date": "2019-04-02",
-      "maladaptivePattern": "All or nothing thinking",
-      "symptoms": "panic",
-      "copingSkills": "progressive muscle relaxation",
-      "accompanied": "on",
-      "environmentId": null,
-      "therapyId": null,
-      "clientId": null,
+      "date": "2019-04-20",
+      "maladaptivePattern": "",
+      "symptoms": "",
+      "copingSkills": "",
+      "accompanied": false,
+      "environmentId": "4",
+      "therapyId": "4",
+      "clientId": 6,
       "id": 2
+    },
+    {
+      "date": "2019-04-04",
+      "maladaptivePattern": "",
+      "symptoms": "",
+      "copingSkills": "",
+      "accompanied": false,
+      "environmentId": "4",
+      "therapyId": "4",
+      "clientId": 3,
+      "id": 3
+    },
+    {
+      "date": "2019-04-20",
+      "maladaptivePattern": "",
+      "symptoms": "",
+      "copingSkills": "",
+      "accompanied": false,
+      "environmentId": "4",
+      "therapyId": "4",
+      "clientId": 4,
+      "id": 4
     }
   ],
   "environment": [

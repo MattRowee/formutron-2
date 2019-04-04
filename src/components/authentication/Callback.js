@@ -7,13 +7,13 @@ class Callback extends Component {
     await auth0Client.handleAuthentication();
 
     // Needs to be refactored, put in its own module, etc
-    fetch(`http://localhost:5002/employees?aud=${auth0Client.getProfile().sub}`)
-      .then(matchingEmployee => matchingEmployee.json())
-      .then(matchingEmployee => {
-        console.log("This is our array of employees that have the current user's aud", matchingEmployee);
+    fetch(`http://localhost:5002/users?aud=${auth0Client.getProfile().sub}`)
+      .then(matchingUser => matchingUser.json())
+      .then(matchingUser => {
+        console.log("This is our array of employees that have the current user's aud", matchingUser);
 
         // If the the fetch call comes back empty, it means that the user who just logged in with Auth 0 doesn't exist in our json-server database. We need to register them!
-        if (matchingEmployee.length === 0) {
+        if (matchingUser.length === 0) {
           console.log("User not found, registering a new user!");
 
           // Create a new user object to post to the db
@@ -23,7 +23,7 @@ class Callback extends Component {
           };
 
           // Post it!!
-          fetch(`http://localhost:5002/employees`, {
+          fetch(`http://localhost:5002/users`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json"
@@ -44,9 +44,9 @@ class Callback extends Component {
           // If something DOES come back from the fetch call (i.e. the array has a user in it), that means the user already exists in our db and we just need to log them in
           console.log(
             "We found that user! Here's their id!",
-            matchingEmployee[0].id
+            matchingUser[0].id
           );
-          sessionStorage.setItem("credentials", matchingEmployee[0].id);
+          sessionStorage.setItem("credentials", matchingUser[0].id);
         }
       });
     this.props.history.replace("/");
