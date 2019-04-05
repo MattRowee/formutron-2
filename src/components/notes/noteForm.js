@@ -17,9 +17,9 @@ export default class NoteForm extends Component {
 
   // Update state whenever an input field is edited
   handleFieldChange = evt => {
-      console.log("This is evt", evt);
-      console.log("This is evt.target.value", evt.target.value);
-      console.log("this is evt.target.id", evt.target.id)
+    console.log("This is evt", evt);
+    console.log("This is evt.target.value", evt.target.value);
+    console.log("this is evt.target.id", evt.target.id)
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
@@ -31,24 +31,24 @@ export default class NoteForm extends Component {
      */
   constructNewNote = evt => {
     evt.preventDefault();
-      const note = {
-        date: this.state.date,
-        maladaptivePattern: this.state.maladaptivePattern,
-        symptoms: this.state.symptoms,
-        copingSkills: this.state.copingSkills,
-        accompanied: this.state.accompanied,
+    const note = {
+      date: this.state.date,
+      maladaptivePattern: this.state.maladaptivePattern,
+      symptoms: this.state.symptoms,
+      copingSkills: this.state.copingSkills,
+      accompanied: this.state.accompanied,
 
-        ///how to grab these values?
-        environmentId: sessionStorage.getItem("credentials"),
-        therapyId: sessionStorage.getItem("credentials"),
-        clientId: parseInt(this.props.match.params.clientId)
-      };
+      ///how to grab these values?
+      environmentId: sessionStorage.getItem("credentials"),
+      therapyId: sessionStorage.getItem("credentials"),
+      clientId: parseInt(this.props.match.params.clientId)
+    };
 
-      // Create the animal and redirect user to animal list
-      this.props
-        .addNote(note)
-        .then(() => this.props.history.push("/"))
-        console.log(this.props)
+    // Create the animal and redirect user to animal list
+    this.props
+      .addNote(note)
+      .then(() => this.props.history.push("/"))
+    console.log(this.props)
   };
 
   render() {
@@ -103,13 +103,119 @@ export default class NoteForm extends Component {
             <label htmlFor="accompanied">Accompanied</label>
             <input
               type="checkbox"
-              required
+              checked={true}
               className="form-control"
-              onChange={this.handleFieldChange}
               id="accompanied"
-              placeholder="Accompanied"
             />
           </div>
+
+          <form className="environmentForm">
+            <div className="environmentDiv">
+              <label>
+                <input
+                  type="radio"
+                  name="environmentRadio"
+                  value="school"
+                  className="form-check-input"
+                />
+                School
+              </label>
+            </div>
+            <div className="environmentDiv">
+              <label>
+                <input
+                  type="radio"
+                  name="environmentRadio"
+                  value="home"
+                  className="form-check-input"
+                />
+                Home
+              </label>
+            </div>
+            <div className="environmentDiv">
+              <label>
+                <input
+                  type="radio"
+                  name="environmentRadio"
+                  value="clinic"
+                  className="form-check-input"
+                />
+                Clinic
+              </label>
+            </div>
+          </form>
+
+          <form className="therapyForm">
+            <div className="therapyDiv">
+              <label>
+                <input
+                  type="radio"
+                  name="therapyRadio"
+                  value="sensoryIntegration"
+                  className="form-check-input"
+                />
+                Sensory Integration
+              </label>
+            </div>
+            <div className="therapyDiv">
+              <label>
+                <input
+                  type="radio"
+                  name="therapyRadio"
+                  value="oral"
+                  className="form-check-input"
+                />
+                Feeding / Oral-motor
+              </label>
+            </div>
+            <div className="therapyDiv">
+              <label>
+                <input
+                  type="radio"
+                  name="therapyRadio"
+                  value="speech"
+                  className="form-check-input"
+                />
+                Speech / Articulation
+              </label>
+            </div>
+            <div className="therapyDiv">
+              <label>
+                <input
+                  type="radio"
+                  name="therapyRadio"
+                  value="expression"
+                  className="form-check-input"
+                />
+                Expression / Receptive Language
+              </label>
+            </div>
+            <div className="therapyDiv">
+              <label>
+                <input
+                  type="radio"
+                  name="therapyRadio"
+                  value="pragmatic"
+                  className="form-check-input"
+                />
+                Pragmatic / Social
+              </label>
+              </div>
+              <div className="therapyDiv">
+              <label>
+                <input
+                  type="radio"
+                  name="therapyRadio"
+                  value="collaboration"
+                  className="form-check-input"
+                />
+                Education / Training / Collaboration
+              </label>
+            </div>
+          </form>
+
+
+
           {/* we still dont have ENVIRONMENT and THERAPY fields */}
           <button
             type="submit"
