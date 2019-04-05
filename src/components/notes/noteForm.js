@@ -8,7 +8,7 @@ export default class NoteForm extends Component {
     maladaptivePattern: "",
     symptoms: "",
     copingSkills: "",
-    accompanied: false,
+    accompanied: "accompanied",
     environmentId: "",
     therapyId: "",
     clientId: ""
@@ -43,7 +43,7 @@ export default class NoteForm extends Component {
       therapyId: sessionStorage.getItem("credentials"),
       clientId: parseInt(this.props.match.params.clientId)
     };
-
+    if(note.accompanied === "true"){note.accompanied = true}
     // Create the animal and redirect user to animal list
     this.props
       .addNote(note)
@@ -103,8 +103,9 @@ export default class NoteForm extends Component {
             <label htmlFor="accompanied">Accompanied</label>
             <input
               type="checkbox"
-              checked={true}
               className="form-control"
+              onChange={this.handleFieldChange}
+              value={true}
               id="accompanied"
             />
           </div>
@@ -115,6 +116,7 @@ export default class NoteForm extends Component {
                 <input
                   type="radio"
                   name="environmentRadio"
+                  checked={true}
                   value="school"
                   className="form-check-input"
                 />
@@ -151,6 +153,7 @@ export default class NoteForm extends Component {
                 <input
                   type="radio"
                   name="therapyRadio"
+                  checked={true}
                   value="sensoryIntegration"
                   className="form-check-input"
                 />

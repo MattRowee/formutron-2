@@ -72,28 +72,6 @@
       "accompanied": false,
       "environmentId": "4",
       "therapyId": "4",
-      "clientId": 5,
-      "id": 1
-    },
-    {
-      "date": "2019-04-20",
-      "maladaptivePattern": "",
-      "symptoms": "",
-      "copingSkills": "",
-      "accompanied": false,
-      "environmentId": "4",
-      "therapyId": "4",
-      "clientId": 6,
-      "id": 2
-    },
-    {
-      "date": "2019-04-04",
-      "maladaptivePattern": "",
-      "symptoms": "",
-      "copingSkills": "",
-      "accompanied": false,
-      "environmentId": "4",
-      "therapyId": "4",
       "clientId": 3,
       "id": 3
     },
@@ -107,6 +85,17 @@
       "therapyId": "4",
       "clientId": 4,
       "id": 4
+    }
+    {
+      "date": "2019-04-27",
+      "maladaptivePattern": "",
+      "symptoms": "",
+      "copingSkills": "",
+      "accompanied": true,
+      "environmentId": "4",
+      "therapyId": "4",
+      "clientId": 3,
+      "id": 8
     }
   ],
   "environment": [
