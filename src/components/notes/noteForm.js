@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-
+// import EnvironmentManager from "../modules/environmentManager"
+// import TherapyManager from "../modules/therapyManager"
+import PropTypes from 'prop-types'
 
 export default class NoteForm extends Component {
   // Set initial state when ClientForm renders.
@@ -8,10 +10,12 @@ export default class NoteForm extends Component {
     maladaptivePattern: "",
     symptoms: "",
     copingSkills: "",
-    accompanied: "accompanied",
+    accompanied: "",
     environmentId: "",
     therapyId: "",
-    clientId: ""
+    clientId: "",
+    environment: "",
+    therapy: ""
   };
 
 
@@ -25,8 +29,12 @@ export default class NoteForm extends Component {
     this.setState(stateToChange);
   };
 
+  // create a const to initialize environment?
+
+
+
   /*
-        Local method for validation, creating animal object, and
+        Local method for validation, creating note object, and
         invoking the function reference passed from parent component
      */
   constructNewNote = evt => {
@@ -38,20 +46,24 @@ export default class NoteForm extends Component {
       copingSkills: this.state.copingSkills,
       accompanied: this.state.accompanied,
 
-      ///how to grab these values?
-      environmentId: sessionStorage.getItem("credentials"),
-      therapyId: sessionStorage.getItem("credentials"),
+      ///how to grab these values? RADIO BUTTONS NEED A [HANDLE FIELD CHANGE]
+      environmentId: this.state.environment,
+      therapyId: "",
       clientId: parseInt(this.props.match.params.clientId)
     };
-    if(note.accompanied === "true"){note.accompanied = true}
-    // Create the animal and redirect user to animal list
+    if (note.accompanied === "true") { note.accompanied = true }
+    else (note.accompanied = false)
+    // Create the note and redirect user to client list
     this.props
       .addNote(note)
       .then(() => this.props.history.push("/"))
     console.log(this.props)
   };
 
+
   render() {
+
+    console.log(this.props.environment)
     return (
       <React.Fragment>
         <form className="NoteForm">
@@ -110,42 +122,33 @@ export default class NoteForm extends Component {
             />
           </div>
 
-          <form className="environmentForm">
-            <div className="environmentDiv">
-              <label>
-                <input
-                  type="radio"
-                  name="environmentRadio"
-                  checked={true}
-                  value="school"
-                  className="form-check-input"
-                />
-                School
-              </label>
-            </div>
-            <div className="environmentDiv">
-              <label>
-                <input
-                  type="radio"
-                  name="environmentRadio"
-                  value="home"
-                  className="form-check-input"
-                />
-                Home
-              </label>
-            </div>
-            <div className="environmentDiv">
-              <label>
-                <input
-                  type="radio"
-                  name="environmentRadio"
-                  value="clinic"
-                  className="form-check-input"
-                />
-                Clinic
-              </label>
-            </div>
-          </form>
+          {/* ///////////////////////////////////////////////////////////////
+    //////////////////////// environment form  ////////////////
+    /////////////////////////////////////////////////////////////// */}
+        <form className="environmentForm">
+          {this.props.environment.map(environments =>
+
+              <div key={environments.id} className="environmentDiv">
+                <label htmlFor="environment">
+                  <input
+                    type="radio"
+                    name="environmentRadio"
+                    value={environments.id}
+                    onChange={this.handleFieldChange}
+                    className="form-check-input"
+                  />
+                  {environments.name}
+                </label>
+              </div>
+
+          )}
+ </form>
+
+
+
+          {/* ///////////////////////////////////////////////////////////////
+    //////////// therapy form section of note form ////////////////
+    /////////////////////////////////////////////////////////////// */}
 
           <form className="therapyForm">
             <div className="therapyDiv">
@@ -203,8 +206,8 @@ export default class NoteForm extends Component {
                 />
                 Pragmatic / Social
               </label>
-              </div>
-              <div className="therapyDiv">
+            </div>
+            <div className="therapyDiv">
               <label>
                 <input
                   type="radio"
@@ -235,3 +238,6 @@ export default class NoteForm extends Component {
 
 // Using the Form
 // Once you've got all these pieces in place, click on the Admit Client button, fill out the form, and submit it. You should immediately see your new animal in the list.
+NoteForm.propTypes = {
+  environment: PropTypes.arrayOf(PropTypes.object)
+}

@@ -64,39 +64,7 @@
     }
   ],
   "notes": [
-    {
-      "date": "2019-04-04",
-      "maladaptivePattern": "",
-      "symptoms": "",
-      "copingSkills": "",
-      "accompanied": false,
-      "environmentId": "4",
-      "therapyId": "4",
-      "clientId": 3,
-      "id": 3
-    },
-    {
-      "date": "2019-04-20",
-      "maladaptivePattern": "",
-      "symptoms": "",
-      "copingSkills": "",
-      "accompanied": false,
-      "environmentId": "4",
-      "therapyId": "4",
-      "clientId": 4,
-      "id": 4
-    }
-    {
-      "date": "2019-04-27",
-      "maladaptivePattern": "",
-      "symptoms": "",
-      "copingSkills": "",
-      "accompanied": true,
-      "environmentId": "4",
-      "therapyId": "4",
-      "clientId": 3,
-      "id": 8
-    }
+
   ],
   "environment": [
     {

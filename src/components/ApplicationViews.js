@@ -6,14 +6,15 @@ import RegisterForm from "./authentication/login"
 import ClientManager from "../modules/clientManager";
 import ClientList from "./clients/clientList";
 import ClientForm from "./clients/clientForm";
-import ClientDetail from "./clients/clientDetail";
 import Client from "./clients/client";
 import ClientEdit from "./clients/clientEdit";
 
 import NoteManager from "../modules/notesManager";
-import NoteList from "./notes/noteList";
 import NoteDetail from "./notes/noteDetail";
 import NoteForm from "./notes/noteForm";
+
+import EnvironmentManager from "../modules/environmentManager"
+import TherapyManager from "../modules/therapyManager"
 
 import Auth0Client from "./authentication/Auth";
 import Callback from "./authentication/Callback";
@@ -86,9 +87,7 @@ class ApplicationViews extends Component {
             })
         );
     };
-    ///////////////////////////////////////////////////////////
-    ////////////// API FUNCTIONS FOR USERS ///////////////////////
-    /////////////////////////////////////////////////////////////
+
 
     /////////////////////////////////////////////////////////////
     /////////////////// API CALL FOR DATA ///////////////////////
@@ -101,7 +100,10 @@ class ApplicationViews extends Component {
             .then(clients => (newState.clients = clients))
             .then(NoteManager.getAll)
             .then(notes => (newState.notes = notes))
-            .then(() => this.setState(newState));
+            .then(EnvironmentManager.getAll)
+            .then(environment => (newState.environment = environment))
+            .then(() => this.setState(newState))
+
     }
 
     /////////////////////////////////////////////////////////////
@@ -149,10 +151,10 @@ class ApplicationViews extends Component {
                     render={props => {
                         return this.isAuthenticated() ? (
                             <ClientList
-                            {...props}
-                            clients={this.state.clients}
-                            deleteClient={this.deleteClient}
-                             />
+                                {...props}
+                                clients={this.state.clients}
+                                deleteClient={this.deleteClient}
+                            />
                         ) : (
                                 <Redirect to="/login" />
                             );
@@ -181,6 +183,8 @@ class ApplicationViews extends Component {
                                 clients={this.state.clients}
                                 addNote={this.addNote}
                                 notes={this.state.notes}
+                                environment={this.state.environment}
+                                therapy={this.state.therapy}
                             />
                         ) : (
                                 <Redirect to="/login" />
@@ -223,7 +227,10 @@ class ApplicationViews extends Component {
                         return this.isAuthenticated() ? (
                             <NoteForm {...props}
                                 addNote={this.addNote}
-                                notes={this.state.notes} />
+                                notes={this.state.notes}
+                                therapy={this.state.therapy}
+                                environment={this.state.environment}
+                            />
                         ) : (
                                 <Redirect to="/login" />
                             )
