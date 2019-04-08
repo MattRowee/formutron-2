@@ -1,63 +1,79 @@
-import React, { Component } from "react";
-import PropTypes from 'prop-types'
+import React, { Component } from "react"
+import NoteManager from "../../modules/notesManager"
 
-export default class NoteForm extends Component {
-  // Set initial state when NoteForm renders.
-  state = {
-    date: "",
-    maladaptivePattern: "",
-    symptoms: "",
-    copingSkills: "",
-    accompanied: "",
-    environmentId: "",
-    therapyId: "",
-    clientId: "",
-    environment: "",
-    therapy: ""
-  };
+// setting state.. what does that really mean? defining the keys of the object?
+export default class NoteEditForm extends Component {
+    // Set initial state
+    state = {
+        date: "",
+        maladaptivePattern: "",
+        symptoms: "",
+        copingSkills: "",
+        accompanied: "",
+        environmentId: "",
+        therapyId: "",
+        clientId: "",
+        environment: "",
+        therapy: ""
+      };
 
+// this is a function that changes the state of the target, setting it to the target value.
+// a neccessary function for editing. See if you can find this function in other modules on the app.
+// it is called after the method [[onChange]] further down in the render function
+    handleFieldChange = evt => {
+        const stateToChange = {}
+        stateToChange[evt.target.id] = evt.target.value
+        this.setState(stateToChange)
+    }
+// updateExistingNote is all the code that runs when you update your note.
+// Prevent default prevents the function from running...
+// if the inputs are all filled in, creates edited note and runs the update note function with
+// the edited note object
+    updateExistingNote = evt => {
+      evt.preventDefault()
 
-  // Update state whenever an input field is edited
-  handleFieldChange = evt => {
+        const editedNote = {
+            id: this.props.match.params.noteId,
+            date: this.state.date,
+            maladaptivePattern: this.state.maladaptivePattern,
+            symptoms: this.state.symptoms,
+            copingSkills: this.state.copingSkills,
+            accompanied: this.state.accompanied,
+            environmentId: parseInt(this.state.environmentId),
+            therapyId: parseInt(this.state.therapyId),
+            clientId: parseInt(this.state.clientId)
+          };
+          if (editedNote.accompanied === "true") { editedNote.accompanied = true }
+          else (editedNote.accompanied = false)
 
-    const stateToChange = {};
-    stateToChange[evt.target.id] = evt.target.value;
-    this.setState(stateToChange);
-    console.log(evt.target)
-  };
-
-  // create a const to initialize environment?
-  /*
-        Local method for validation, creating note object, and
-        invoking the function reference passed from parent component
-     */
-  constructNewNote = evt => {
-    evt.preventDefault();
-    const note = {
-      date: this.state.date,
-      maladaptivePattern: this.state.maladaptivePattern,
-      symptoms: this.state.symptoms,
-      copingSkills: this.state.copingSkills,
-      accompanied: this.state.accompanied,
-
-      ///how to grab these values? RADIO BUTTONS NEED A [HANDLE FIELD CHANGE]
-      environmentId: parseInt(this.state.environmentId),
-      therapyId: parseInt(this.state.therapyId),
-      clientId: parseInt(this.props.match.params.clientId)
-    };
-    if (note.accompanied === "true") { note.accompanied = true }
-    else (note.accompanied = false)
-    // Create the note and redirect user to client list
     this.props
-      .addNote(note)
-      .then(() => this.props.history.push("/"))
-    console.log(this.props)
-  };
+    .updateNote(editedNote)
+    .then(() => this.props.history.push("/clients"))
+    }
 
+// when the component mounts, grab the matching note data from the database and setstate with that info
+    componentDidMount() {
+      NoteManager.getNote(this.props.match.params.noteId)
+      .then(note => {
+        this.setState({
+            date: note.date,
+            maladaptivePattern: note.maladaptivePattern,
+            symptoms: note.symptoms,
+            copingSkills: note.copingSkills,
+            accompanied: note.accompanied,
+            environmentId: note.environmentId,
+            therapyId: note.therapyId,
+            clientId: note.clientId,
+            environment: "",
+            therapy: ""
+        });
+      });
+    }
 
-  render() {
+// actual generation/rendering of the edit form
+render() {
 
-
+    console.log(this.props.match.params)
     return (
       <React.Fragment>
         <form className="NoteForm">
@@ -69,7 +85,7 @@ export default class NoteForm extends Component {
               className="form-control"
               onChange={this.handleFieldChange}
               id="date"
-              placeholder="Date"
+              value={this.state.date}
             />
           </div>
           <div className="form-group">
@@ -119,7 +135,8 @@ export default class NoteForm extends Component {
           {/* ///////////////////////////////////////////////////////////////
     //////////////////////// environment form  ////////////////
     /////////////////////////////////////////////////////////////// */}
-        <form className="environmentForm">
+
+         <form className="environmentForm">
           {this.props.environment.map(environments =>{
 
              return <div key={environments.id} className="environmentDiv">
@@ -165,7 +182,7 @@ export default class NoteForm extends Component {
 
           <button
             type="submit"
-            onClick={this.constructNewNote}
+            onClick={this.updateExistingNote}
             className="btn btn-primary"
           >
             Submit
@@ -174,8 +191,4 @@ export default class NoteForm extends Component {
       </React.Fragment>
     );
   }
-}
-
-NoteForm.propTypes = {
-  environment: PropTypes.arrayOf(PropTypes.object)
 }

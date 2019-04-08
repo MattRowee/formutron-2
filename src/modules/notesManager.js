@@ -9,6 +9,15 @@ export default {
       notes.json()
     );
   },
+  put(editedNote) {
+    return fetch(`${remoteURL}/notes/${editedNote.id}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(editedNote)
+          }).then(data => data.json())
+        },
   getById: id =>
     fetch(`http://localhost:5002/notes/${id}`).then(e => e.json()),
 //   getByEmail: email =>

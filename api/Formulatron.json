@@ -19,6 +19,16 @@
       "aud": "auth0|5ca50eeafcf14510ff5478a8",
       "name": "jerry",
       "id": 4
+    },
+    {
+      "aud": "auth0|5cab8be7e192e0110811e7ee",
+      "name": "timmy",
+      "id": 5
+    },
+    {
+      "aud": "auth0|5cab99965bcabb1117b0196a",
+      "name": "poop",
+      "id": 6
     }
   ],
   "clients": [
@@ -44,7 +54,7 @@
     },
     {
       "id": 3,
-      "name": "jerry's client 1(still)",
+      "name": "jerry's client 1",
       "age": "",
       "phoneNumber": "",
       "address": "",
@@ -61,52 +71,82 @@
       "history": "",
       "userId": "4",
       "id": 4
+    },
+    {
+      "id": 5,
+      "name": "Jeremy3",
+      "age": "4",
+      "phoneNumber": "5",
+      "address": "a great place to be",
+      "email": "my Email",
+      "history": "history",
+      "userId": "5"
+    },
+    {
+      "name": "tom",
+      "age": "",
+      "phoneNumber": "",
+      "address": "",
+      "email": "",
+      "history": "",
+      "userId": "5",
+      "id": 6
+    },
+    {
+      "id": 7,
+      "name": "poop",
+      "age": "9",
+      "phoneNumber": "9",
+      "address": "9",
+      "email": "9",
+      "history": "9",
+      "userId": "6"
     }
   ],
   "notes": [
     {
-      "date": "2019-04-04",
-      "maladaptivePattern": "",
-      "symptoms": "",
-      "copingSkills": "",
+      "id": 1,
+      "date": "2019-04-09",
+      "maladaptivePattern": "All or nothing thinking",
+      "symptoms": "totally editing",
+      "copingSkills": "rocking and rolling",
       "accompanied": false,
-      "environmentId": "4",
-      "therapyId": "4",
-      "clientId": 5,
-      "id": 1
+      "environmentId": 2,
+      "therapyId": 4,
+      "clientId": null
     },
     {
-      "date": "2019-04-20",
-      "maladaptivePattern": "",
-      "symptoms": "",
-      "copingSkills": "",
+      "id": 2,
+      "date": "2019-04-30",
+      "maladaptivePattern": "All or nothing thinking(edit)",
+      "symptoms": "EDDDDITTT",
+      "copingSkills": "EDDIDITIE",
       "accompanied": false,
-      "environmentId": "4",
-      "therapyId": "4",
+      "environmentId": 3,
+      "therapyId": 1,
+      "clientId": null
+    },
+    {
+      "date": "2019-04-08",
+      "maladaptivePattern": "Negative self-talk",
+      "symptoms": "anger, bi-polar episodes",
+      "copingSkills": "CHILL OUT BRO",
+      "accompanied": false,
+      "environmentId": 1,
+      "therapyId": 1,
       "clientId": 6,
-      "id": 2
-    },
-    {
-      "date": "2019-04-04",
-      "maladaptivePattern": "",
-      "symptoms": "",
-      "copingSkills": "",
-      "accompanied": false,
-      "environmentId": "4",
-      "therapyId": "4",
-      "clientId": 3,
       "id": 3
     },
     {
-      "date": "2019-04-20",
-      "maladaptivePattern": "",
-      "symptoms": "",
-      "copingSkills": "",
+      "id": 4,
+      "date": "2019-04-08",
+      "maladaptivePattern": "barf",
+      "symptoms": "barf",
+      "copingSkills": "barf",
       "accompanied": false,
-      "environmentId": "4",
-      "therapyId": "4",
-      "clientId": 4,
-      "id": 4
+      "environmentId": 2,
+      "therapyId": 5,
+      "clientId": 7
     }
   ],
   "environment": [
@@ -146,7 +186,7 @@
     },
     {
       "id": 6,
-      "name": "education / trainging / collaboration"
+      "name": "education / training / collaboration"
     }
   ]
 }
