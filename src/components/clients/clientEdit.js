@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import ClientManager from "../../modules/clientManager"
 
 // setting state.. what does that really mean? defining the keys of the object?
-export default class AnimalEditForm extends Component {
+export default class EditForm extends Component {
     // Set initial state
     state = {
         clientName: "",
@@ -57,7 +57,7 @@ export default class AnimalEditForm extends Component {
           address: client.address,
           email: client.email,
           history: client.history,
-          employeeId: client.employeeId
+          userId: client.userId
         });
       });
     }

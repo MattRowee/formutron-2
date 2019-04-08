@@ -12,6 +12,7 @@ import ClientEdit from "./clients/clientEdit";
 import NoteManager from "../modules/notesManager";
 import NoteDetail from "./notes/noteDetail";
 import NoteForm from "./notes/noteForm";
+import NoteEdit from "./notes/noteEdit"
 
 import EnvironmentManager from "../modules/environmentManager"
 import TherapyManager from "../modules/therapyManager"
@@ -87,7 +88,15 @@ class ApplicationViews extends Component {
             })
         );
     };
-
+    updateNote = editedNoteObject => {
+        return NoteManager.put(editedNoteObject)
+            .then(() => NoteManager.getAll())
+            .then(notes => {
+                this.setState({
+                    notes: notes
+                })
+            });
+    };
 
     /////////////////////////////////////////////////////////////
     /////////////////// API CALL FOR DATA ///////////////////////
@@ -102,6 +111,8 @@ class ApplicationViews extends Component {
             .then(notes => (newState.notes = notes))
             .then(EnvironmentManager.getAll)
             .then(environment => (newState.environment = environment))
+            .then(TherapyManager.getAll)
+            .then(therapy => (newState.therapy =therapy))
             .then(() => this.setState(newState))
 
     }
@@ -215,6 +226,7 @@ class ApplicationViews extends Component {
                                 notes={this.state.notes}
                                 therapy={this.state.therapy}
                                 environment={this.state.environment}
+                                updateNote={this.updateNote}
                             />
                         ) : (
                                 <Redirect tp="/login" />
@@ -235,6 +247,19 @@ class ApplicationViews extends Component {
                                 <Redirect to="/login" />
                             )
                     }} />
+                     <Route
+                    path="/notes/:noteId(\d+)/edit"
+                    render={props => {
+                        return <NoteEdit
+                            {...props}
+                            notes={this.state.notes}
+                            updateNote={this.updateNote}
+                            clients={this.state.clients}
+                            therapy={this.state.therapy}
+                            environment={this.state.environment}
+                        />
+                    }}
+                />
 
             </div>
         )
