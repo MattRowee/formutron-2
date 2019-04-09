@@ -29,6 +29,11 @@
       "aud": "auth0|5cab99965bcabb1117b0196a",
       "name": "poop",
       "id": 6
+    },
+    {
+      "aud": "auth0|5ca3b438cfd08c10ddc3176d",
+      "name": "test",
+      "id": 7
     }
   ],
   "clients": [
@@ -101,6 +106,26 @@
       "email": "9",
       "history": "9",
       "userId": "6"
+    },
+    {
+      "name": "Matt Rowe",
+      "age": "10",
+      "phoneNumber": "20",
+      "address": "10",
+      "email": "email",
+      "history": "history",
+      "userId": "7",
+      "id": 8
+    },
+    {
+      "name": "terry",
+      "age": "",
+      "phoneNumber": "",
+      "address": "",
+      "email": "",
+      "history": "",
+      "userId": "7",
+      "id": 9
     }
   ],
   "notes": [
@@ -147,6 +172,39 @@
       "environmentId": 2,
       "therapyId": 5,
       "clientId": 7
+    },
+    {
+      "date": "2019-04-10",
+      "maladaptivePattern": "asdfasf",
+      "symptoms": "",
+      "copingSkills": "",
+      "accompanied": false,
+      "environmentId": null,
+      "therapyId": null,
+      "clientId": 8,
+      "id": 5
+    },
+    {
+      "date": "2019-04-30",
+      "maladaptivePattern": "",
+      "symptoms": "",
+      "copingSkills": "",
+      "accompanied": false,
+      "environmentId": null,
+      "therapyId": null,
+      "clientId": 9,
+      "id": 6
+    },
+    {
+      "date": "2019-04-16",
+      "maladaptivePattern": "",
+      "symptoms": "",
+      "copingSkills": "",
+      "accompanied": false,
+      "environmentId": null,
+      "therapyId": null,
+      "clientId": 9,
+      "id": 7
     }
   ],
   "environment": [

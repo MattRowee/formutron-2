@@ -18,20 +18,20 @@ export default class NoteDetail extends Component {
             <section className="notes">
                 <div key={note.id} className="card">
                     <div className="card-body">
-                        <h4 className="card-title">
+                        <h6 className="card-title">Session date:
                             {note.date}
-                        </h4>
-                        <h6 className="card-title">{note.maladaptivePattern}</h6>
-                        <h6 className="card-title">{note.symptoms}</h6>
-                        <h6 className="card-title">{note.copingSkills}</h6>
-                        <h6 className="card-title">{note.accompanied}</h6>
+                        </h6>
+                        <h6 className="card-title">Maladaptive pattern: {note.maladaptivePattern}</h6>
+                        <h6 className="card-title">Symptom: {note.symptoms}</h6>
+                        <h6 className="card-title">Coping skills: {note.copingSkills}</h6>
+                        <h6 className="card-title">Accompanied: {note.accompanied}</h6>
 
                         {/* an anchor tag which calls the delete function
                         then pushes the user to the animals route as a reset */}
 
                         <a href="#"
                             onClick={() => this.props.deleteNote(note.id)
-                                .then(() => this.props.history.push("/notes"))}
+                                .then(() => this.props.history.push("/clients"))}
                             className="card-link">Delete</a>
 
                             {/* This button has a click event that pushes
