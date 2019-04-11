@@ -15,7 +15,7 @@ export default class ClientDetail extends Component {
 
         return (
             <section className="clients">
-                <div key={client.id} className="card">
+                <div key={client.id} className="clientCard">
                     <div className="card-body">
                         <h6 className="card-title">Name:
                             {client.name}
@@ -27,23 +27,27 @@ export default class ClientDetail extends Component {
                         <h6 className="card-title">History: {client.history}</h6>
                         {/* an anchor tag which calls the delete function
                         then pushes the user to the animals route as a reset */}
+                        <div className="ButtonBox">
+                        <div className="clientButton">
+                            <button type="button"
+                                className="btn btn-danger"
+                                onClick={() => this.props.deleteClient(client.id)
+                                    .then(() => this.props.history.push("/"))}
+                                >Delete</button>
+                        </div>
 
-                        <a href="#"
-                            onClick={() => this.props.deleteClient(client.id)
-                                .then(() => this.props.history.push("/"))}
-                            className="card-link">Delete</a>
-
-                            {/* This button has a click event that pushes
+                        {/* This button has a click event that pushes
                             the user to the edit route */}
                         <button
                             type="button"
-                            className="btn btn-success"
+                            className="btn btn-warning"
                             onClick={() => {
                                 this.props.history.push(`/clients/${client.id}/edit`);
                             }}
                         >
                             Edit
                         </button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -54,5 +58,5 @@ export default class ClientDetail extends Component {
 ClientDetail.propTypes = {
     clients: PropTypes.arrayOf(PropTypes.object),
     deleteClient: PropTypes.object
-    }
+}
 

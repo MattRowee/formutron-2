@@ -9,7 +9,7 @@ export default class ResourceCard extends Component {
                 <div className="card-body">
                     <h5 className="card-title">
                         <img src={this.props.resource.image} className="" />
-                        <h4 className="clientCardName">Client: {this.props.resource.name}</h4>
+                        <h4 className="clientCardName">{this.props.resource.name}</h4>
                         <h6 className="clientCardEmail">{this.props.resource.email}</h6>
                         <h4 className="noteCardDate">{this.props.resource.date}</h4>
                         <h6 className="noteCardSkill">{this.props.resource.copingSkills}</h6>

@@ -5,7 +5,18 @@ export default class NoteList extends Component {
   render() {
     return (
       <React.Fragment>
-
+<div className="noteButton">
+          <button type="button"
+            className="btn btn-warning"
+            onClick={() => {
+              this.props.history.push(`/notes/new/${this.props.match.params.clientId}`)
+            }
+            }
+            >
+            Create Documentation
+                    </button>
+        </div>
+        <label className="labelCenter"><strong>Client Documentation History</strong></label>
         <section className="notes">
             {this.props.notes.map(singleNote => {
               console.log(singleNote, singleNote.clientId, this.props.match.params.clientId)
@@ -18,16 +29,5 @@ export default class NoteList extends Component {
             })}
 
         </section>
-        <div className="noteButton">
-          <button type="button"
-            className="btn btn-success"
-            onClick={() => {
-              this.props.history.push(`/notes/new/${this.props.match.params.clientId}`)
-            }
-            }
-            >
-            Create Documentation
-                    </button>
-        </div>
         </React.Fragment>
         )}}

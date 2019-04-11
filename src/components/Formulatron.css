@@ -1,9 +1,85 @@
-.kennel {
+.formulatron {
     display: flex;
-    justify-content: space-around;
-    flex-direction: row;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .navBeast {
     margin-top: 10vh
+}
+.clients{
+    display: flex;
+    justify-content: center;
+    flex-direction: row
+}
+
+.notes{
+    display: flex;
+    justify-content: center;
+    flex-direction: row
+}
+.card {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2px;
+        padding: 2px;
+        margin: 4px;
+        border: 2px solid rgb(64, 66, 62);
+        padding: 10px;
+        width: 30%;
+}
+.clientCard{
+    border: 2px solid rgb(64, 66, 62);
+    padding: 10px;
+    margin: 5px
+}
+.ClientForm{
+    justify-content: center;
+    border-radius: 25px;
+    border: 2px solid rgb(64, 66, 62);
+    padding: 20px;
+    width: 30%
+}
+
+.ButtonBox{
+    display: flex;
+    justify-content: center;
+    margin: 2em
+}
+
+.noteButton{
+    display: flex;
+    justify-content: center
+}
+
+.environmentForm{
+    justify-content: center;
+    border-radius: 25px;
+    border: 1px solid rgb(64, 66, 62);
+    padding: 20px;
+
+}
+
+.therapyForm{
+    justify-content: center;
+    border-radius: 25px;
+    border: 1px solid rgb(64, 66, 62);
+    padding: 20px;
+    margin: 3px
+}
+
+.NoteForm{
+
+    justify-content: center;
+    border-radius: 25px;
+    border: 2px solid rgb(64, 66, 62);
+    padding: 20px;
+    width: 40%
+}
+
+.labelCenter{
+    display: flex;
+    justify-content: center
 }

@@ -28,37 +28,70 @@
       "id": 1
     },
     {
-      "name": "Max",
+      "id": 2,
+      "name": "Max Masterson",
       "age": "10",
-      "phoneNumber": "12",
-      "address": "this place",
-      "email": "an email address",
-      "history": "history of doing questionable things",
-      "userId": "3",
-      "id": 2
+      "phoneNumber": "555-555-5552",
+      "address": "1202 W Banksting Ave",
+      "email": "masterson33@formulatrom.co",
+      "history": "Max is kind and helpful, creative. Bouts of depression, anxiety, self-doubt",
+      "userId": "3"
     },
     {
-      "name": "Johnny",
-      "age": "",
-      "phoneNumber": "",
-      "address": "",
-      "email": "",
-      "history": "",
-      "userId": "3",
-      "id": 3
+      "id": 3,
+      "name": "Johnny Holdings",
+      "age": "12",
+      "phoneNumber": "555-555-5553",
+      "address": "1115 E apache blvd apt 322",
+      "email": "jhold@formutron.com",
+      "history": "Intelligent class clown, compulsive petty theft",
+      "userId": "3"
     },
     {
-      "name": "jacky",
-      "age": "",
-      "phoneNumber": "",
-      "address": "",
-      "email": "",
-      "history": "",
+      "id": 4,
+      "name": "Jacky Kerouacky ",
+      "age": "14",
+      "phoneNumber": "555-555-5554",
+      "address": "2121 Dharma Lane",
+      "email": "jkontheroad@gmail.com",
+      "history": "Tests high in all subjects, skips school, has ran away from home on separate occasions",
+      "userId": "3"
+    },
+    {
+      "name": "Gnarlo Guthrie",
+      "age": "13",
+      "phoneNumber": "555-555-5551",
+      "address": "1111 E apache blvd apt 202",
+      "email": "ourland@school.com",
+      "history": "Gnarlo is bright, excells at math and sports, is disruptive in class, panics, runs away and climbs buildings.",
       "userId": "3",
-      "id": 4
+      "id": 5
     }
   ],
-  "notes": [],
+  "notes": [
+    {
+      "date": "2019-04-10",
+      "maladaptivePattern": "passive communication",
+      "symptoms": "silent and solitary in class",
+      "copingSkills": "self-monitoring, progressive muscle relaxation",
+      "accompanied": false,
+      "environmentId": 1,
+      "therapyId": 5,
+      "clientId": 2,
+      "id": 1
+    },
+    {
+      "date": "2019-03-15",
+      "maladaptivePattern": "Taking out stress on others",
+      "symptoms": "bouts of anger, stealing",
+      "copingSkills": "diaphragmatic breathing, decision making",
+      "accompanied": true,
+      "environmentId": 1,
+      "therapyId": 4,
+      "clientId": 2,
+      "id": 2
+    }
+  ],
   "environment": [
     {
       "id": 1,

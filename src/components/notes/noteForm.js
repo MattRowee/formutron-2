@@ -120,6 +120,7 @@ export default class NoteForm extends Component {
     //////////////////////// environment form  ////////////////
     /////////////////////////////////////////////////////////////// */}
         <form className="environmentForm">
+        <label>Environment</label>
           {this.props.environment.map(environments =>{
 
              return <div key={environments.id} className="environmentDiv">
@@ -144,6 +145,7 @@ export default class NoteForm extends Component {
     /////////////////////////////////////////////////////////////// */}
 
 <form className="therapyForm">
+ <label>Focus of Therapy</label>
           {this.props.therapy.map(therapies =>{
 
              return <div key={therapies.id} className="therapyDiv">
