@@ -53,7 +53,7 @@ export default class ClientList extends Component {
             Admit Client
                     </button>
         </div>
-        <label>List of Clients</label>
+        <label className="clientListLabel">--------  List of Clients  --------</label>
         <section className="clients">
 
           {filteredClients.map(singleClient => {
