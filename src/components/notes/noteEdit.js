@@ -137,6 +137,7 @@ render() {
     /////////////////////////////////////////////////////////////// */}
 
          <form className="environmentForm">
+         <label><strong>Environment</strong></label>
           {this.props.environment.map(environments =>{
 
              return <div key={environments.id} className="environmentDiv">
@@ -161,6 +162,7 @@ render() {
     /////////////////////////////////////////////////////////////// */}
 
 <form className="therapyForm">
+<label><strong>Therapy Addressed</strong></label>
           {this.props.therapy.map(therapies =>{
 
              return <div key={therapies.id} className="therapyDiv">

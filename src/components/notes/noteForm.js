@@ -61,6 +61,7 @@ export default class NoteForm extends Component {
     return (
       <React.Fragment>
         <form className="NoteForm">
+
           <div className="form-group">
             <label htmlFor="date">Date</label>
             <input
@@ -119,10 +120,11 @@ export default class NoteForm extends Component {
           {/* ///////////////////////////////////////////////////////////////
     //////////////////////// environment form  ////////////////
     /////////////////////////////////////////////////////////////// */}
-        <form className="environmentForm">
-          {this.props.environment.map(environments =>{
+          <form className="environmentForm">
+            <label>Environment</label>
+            {this.props.environment.map(environments => {
 
-             return <div key={environments.id} className="environmentDiv">
+              return <div key={environments.id} className="environmentDiv">
                 <label htmlFor="environment">
                   <input
                     id="environmentId"
@@ -135,18 +137,19 @@ export default class NoteForm extends Component {
                   {environments.name}
                 </label>
               </div>
-          }
-          )}
- </form>
+            }
+            )}
+          </form>
 
           {/* ///////////////////////////////////////////////////////////////
     //////////// therapy form section of note form ////////////////
     /////////////////////////////////////////////////////////////// */}
 
-<form className="therapyForm">
-          {this.props.therapy.map(therapies =>{
+          <form className="therapyForm">
+            <label>Focus of Therapy</label>
+            {this.props.therapy.map(therapies => {
 
-             return <div key={therapies.id} className="therapyDiv">
+              return <div key={therapies.id} className="therapyDiv">
                 <label htmlFor="therapy">
                   <input
                     id="therapyId"
@@ -159,9 +162,9 @@ export default class NoteForm extends Component {
                   {therapies.name}
                 </label>
               </div>
-          }
-          )}
- </form>
+            }
+            )}
+          </form>
 
           <button
             type="submit"
@@ -170,6 +173,7 @@ export default class NoteForm extends Component {
           >
             Submit
           </button>
+
         </form>
       </React.Fragment>
     );

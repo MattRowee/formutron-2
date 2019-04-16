@@ -13,7 +13,6 @@ export default class Client extends Component {
 
         <ClientDetail
           {...this.props}
-
         />
 
         <NoteList

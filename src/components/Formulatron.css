@@ -1,9 +1,117 @@
-.kennel {
+.formulatron {
     display: flex;
-    justify-content: space-around;
-    flex-direction: row;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .navBeast {
-    margin-top: 10vh
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+    align-items: center
+}
+.clients{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap
+}
+
+.notes{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap
+}
+.card {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2px;
+        padding: 2px;
+        margin: 4px;
+        border: 2px solid rgb(64, 66, 62);
+        padding: 10px;
+}
+.clientCard{
+    border: 2px solid rgb(64, 66, 62);
+    padding: 10px;
+    margin: 5px
+}
+.ClientForm{
+    justify-content: center;
+    border-radius: 25px;
+    border: 2px solid rgb(64, 66, 62);
+    padding: 20px;
+    width: 30%
+}
+
+.ButtonBox{
+    display: flex;
+    justify-content: center;
+    margin: 2em
+}
+
+.noteButton{
+    display: flex;
+    justify-content: center
+}
+
+.environmentForm{
+    justify-content: center;
+    border-radius: 25px;
+    border: 1px solid rgb(64, 66, 62);
+    padding: 20px;
+}
+
+.therapyForm{
+    justify-content: center;
+    border-radius: 25px;
+    border: 1px solid rgb(64, 66, 62);
+    padding: 20px;
+    margin: 3px
+}
+
+.NoteForm{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    border: 2px solid rgb(64, 66, 62);
+    padding: 20px;
+    width: 40%
+}
+
+.labelCenter{
+    display: flex;
+    justify-content: center
+}
+
+.search-bar{
+    display: flex;
+    justify-content: center
+}
+
+.clientButton{
+    display: flex;
+    justify-content: center;
+    padding: 10px
+}
+
+.clientListLabel{
+    display: flex;
+    justify-content: center
+}
+
+.navbar{
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.submitBtn{
+    display: flex;
+    justify-content: center;
+    align-content: center
 }

@@ -1,5 +1,17 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Welcome to Formutron!
+intro
+Formutron is a web application which allows the user to generate and manage documentation on therapy clients. Users can create clients and draw up therapy notes for them. The app has several standard features, such as search bars, filtering and editing functionality for all clients and documentation.
+
+The purpose of this application is to provide a simple, user-friendly tool for therapists and counselors to create documentation for their students and clients.
+
+The target user of this application is the working professional who desires a quick and easy way to create and organize their client documentation.
+
+## Formutron UI
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:

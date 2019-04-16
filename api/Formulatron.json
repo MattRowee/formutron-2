@@ -6,147 +6,89 @@
       "id": 1
     },
     {
-      "aud": "auth0|5ca4f5656b1b23115298d5db",
-      "name": "test",
+      "aud": "auth0|5cacb1419f11d91033e6745b",
+      "name": "matt",
       "id": 2
     },
     {
-      "aud": "auth0|5ca4fb4afcf14510ff547754",
-      "name": "mike",
+      "aud": "auth0|5ca3b438cfd08c10ddc3176d",
+      "name": "test",
       "id": 3
-    },
-    {
-      "aud": "auth0|5ca50eeafcf14510ff5478a8",
-      "name": "jerry",
-      "id": 4
-    },
-    {
-      "aud": "auth0|5cab8be7e192e0110811e7ee",
-      "name": "timmy",
-      "id": 5
-    },
-    {
-      "aud": "auth0|5cab99965bcabb1117b0196a",
-      "name": "poop",
-      "id": 6
     }
   ],
   "clients": [
     {
-      "id": 1,
-      "name": "Orlo Amos",
-      "age": "11",
-      "phoneNumber": "12345879",
-      "address": "555 magnolia blvd, Chapmanville, WV, 25704",
-      "email": "orlo@gmail.com",
+      "name": "Orlo Jamos",
+      "age": "12",
+      "phoneNumber": "304-777-7777",
+      "address": "1642 Avondale Blvd",
+      "email": "orlo@elisio.edu",
       "history": "ODD, aggressive, runs away and climbs buildings when upset",
-      "userId": "1"
-    },
-    {
-      "id": 2,
-      "name": "Marianna Gabriella",
-      "age": "11",
-      "phoneNumber": "12345679",
-      "address": "544 azalea blvd, Chapmanville, WV, 25704",
-      "email": "marianna@gmail.com",
-      "history": "dyslexia, anxiety, depression",
-      "userId": "1"
+      "userId": "2",
+      "id": 1
     },
     {
       "id": 3,
-      "name": "jerry's client 1",
-      "age": "",
-      "phoneNumber": "",
-      "address": "",
-      "email": "",
-      "history": "",
-      "userId": "4"
+      "name": "Johnny Holdings",
+      "age": "12",
+      "phoneNumber": "555-555-5553",
+      "address": "1115 E apache blvd apt 322",
+      "email": "jhold@formutron.com",
+      "history": "Intelligent class clown, compulsive petty theft",
+      "userId": "3"
     },
     {
-      "name": "jerry's client 2",
-      "age": "",
-      "phoneNumber": "",
-      "address": "",
-      "email": "",
-      "history": "",
-      "userId": "4",
-      "id": 4
+      "id": 4,
+      "name": "Jacky Kerouacky ",
+      "age": "14",
+      "phoneNumber": "555-555-5554",
+      "address": "2121 Dharma Lane",
+      "email": "jkontheroad@gmail.com",
+      "history": "Tests high in all subjects, skips school, has ran away from home on separate occasions",
+      "userId": "3"
     },
     {
-      "id": 5,
-      "name": "Jeremy3",
-      "age": "4",
-      "phoneNumber": "5",
-      "address": "a great place to be",
-      "email": "my Email",
-      "history": "history",
-      "userId": "5"
+      "name": "Gnarlo Guthrie",
+      "age": "13",
+      "phoneNumber": "555-555-5551",
+      "address": "1111 E apache blvd apt 202",
+      "email": "ourland@school.com",
+      "history": "Gnarlo is bright, excells at math and sports, is disruptive in class, panics, runs away and climbs buildings.",
+      "userId": "3",
+      "id": 5
     },
     {
-      "name": "tom",
-      "age": "",
-      "phoneNumber": "",
-      "address": "",
-      "email": "",
-      "history": "",
-      "userId": "5",
-      "id": 6
+      "name": "Jenni Snead",
+      "age": "33",
+      "phoneNumber": "304-555-5559",
+      "address": "4835 Poplar Level Rd, Louisville, KY",
+      "email": "Snead@sneadmail.com",
+      "history": "extensive background in karate, incorrigible liar",
+      "userId": "3",
+      "id": 8
     },
     {
-      "id": 7,
-      "name": "poop",
-      "age": "9",
-      "phoneNumber": "9",
-      "address": "9",
-      "email": "9",
-      "history": "9",
-      "userId": "6"
+      "name": "Orlo Jamos",
+      "age": "15",
+      "phoneNumber": "69",
+      "address": "1111 E apache blvd apt 202",
+      "email": "m@m",
+      "history": "ODD, aggressive, runs away and climbs buildings when upset",
+      "userId": "3",
+      "id": 9
     }
   ],
   "notes": [
     {
-      "id": 1,
-      "date": "2019-04-09",
+      "date": "2019-04-15",
       "maladaptivePattern": "All or nothing thinking",
-      "symptoms": "totally editing",
-      "copingSkills": "rocking and rolling",
-      "accompanied": false,
-      "environmentId": 2,
-      "therapyId": 4,
-      "clientId": null
-    },
-    {
-      "id": 2,
-      "date": "2019-04-30",
-      "maladaptivePattern": "All or nothing thinking(edit)",
-      "symptoms": "EDDDDITTT",
-      "copingSkills": "EDDIDITIE",
-      "accompanied": false,
+      "symptoms": "panic",
+      "copingSkills": "progressive muscle relaxation",
+      "accompanied": true,
       "environmentId": 3,
-      "therapyId": 1,
-      "clientId": null
-    },
-    {
-      "date": "2019-04-08",
-      "maladaptivePattern": "Negative self-talk",
-      "symptoms": "anger, bi-polar episodes",
-      "copingSkills": "CHILL OUT BRO",
-      "accompanied": false,
-      "environmentId": 1,
-      "therapyId": 1,
-      "clientId": 6,
-      "id": 3
-    },
-    {
-      "id": 4,
-      "date": "2019-04-08",
-      "maladaptivePattern": "barf",
-      "symptoms": "barf",
-      "copingSkills": "barf",
-      "accompanied": false,
-      "environmentId": 2,
-      "therapyId": 5,
-      "clientId": 7
+      "therapyId": 6,
+      "clientId": 9,
+      "id": 6
     }
   ],
   "environment": [

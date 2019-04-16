@@ -125,7 +125,7 @@ export default class ClientForm extends Component {
               placeholder="history"
             />
           </div>
-          <button
+          <button className="submitBtn"
             type="submit"
             onClick={this.constructNewClient}
             className="btn btn-primary"

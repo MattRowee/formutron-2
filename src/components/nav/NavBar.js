@@ -14,7 +14,7 @@ class NavBar extends Component {
    return (
      <nav className="navbar navbar-light fixed-top light-blue flex-md-nowrap p-0 shadow">
        <Link className="navbar-brand" to="/">
-         Formulatron
+         Formutron
        </Link>
        {!auth0Client.isAuthenticated() ? (
          <button className="btn btn-success" onClick={auth0Client.signIn}>
