@@ -20,24 +20,24 @@ export default class NoteDetail extends Component {
 
                 <div key={note.id} className="card">
                     <div className="card-body">
-                        <h6 className="card-title">Session date:
-                            {note.date}
-                        </h6>
+                        <h5 className="card-title">Session date:
+                           <h6> {note.date}</h6>
+                        </h5>
                         <h6 className="card-title">
                             <b>{note.accompanied ? 'Client was accompanied' : "Unaccompanied session"}</b>
                         </h6>
 
-                        <h6 className="card-title">Maladaptive pattern: {note.maladaptivePattern}</h6>
-                        <h6 className="card-title">Symptom: {note.symptoms}</h6>
-                        <h6 className="card-title">Coping skills: {note.copingSkills}</h6>
+                        <h5 className="card-title">Maladaptive pattern: <h6>{note.maladaptivePattern}</h6></h5>
+                        <h5 className="card-title">Symptoms: <h6>{note.symptoms}</h6></h5>
+                        <h5 className="card-title">Coping skills:<h6> {note.copingSkills}</h6></h5>
 
                         {this.props.environment.map(singleEnvironment => {
-                            if (singleEnvironment.id === note.environmentId) { return <h6 className="card-title">Environment: {singleEnvironment.name}</h6> }
+                            if (singleEnvironment.id === note.environmentId) { return <h5 className="card-title">Environment: <h6>{singleEnvironment.name}</h6></h5> }
                         })}
                         {this.props.therapy.map(singleTherapy => {
                             if (singleTherapy.id === note.therapyId) {
-                                return <h6
-                                    className="card-title">Therapy: {singleTherapy.name}</h6>
+                                return <h5
+                                    className="card-title">Therapy: <h6>{singleTherapy.name}</h6></h5>
                             }
                         })}
 
@@ -46,31 +46,32 @@ export default class NoteDetail extends Component {
 
                         <div className="clientButton">
                             <button type="button"
-                                className="btn btn-warning"
+                                className="btn btn-danger"
                                 onClick={() => this.props.deleteNote(note.id)
                                     .then(() => this.props.history.push("/clients"))}
-                                >Delete</button>
-                                </div>
+                            >Delete</button>
 
-                            {/* This button has a click event that pushes
+
+                        {/* This button has a click event that pushes
                             the user to the edit route */}
-                            <button
-                                type="button"
-                                className="btn btn-success"
-                                onClick={() => {
-                                    this.props.history.push(`/notes/${note.id}/edit`);
-                                }}
-                            >
-                                Edit
+                        <button
+                            type="button"
+                            className="btn btn-warning"
+                            onClick={() => {
+                                this.props.history.push(`/notes/${note.id}/edit`);
+                            }}
+                        >
+                            Edit
                         </button>
                         </div>
                     </div>
+                </div>
             </section>
-                )
-            }
-        }
+        )
+    }
+}
 
 NoteDetail.propTypes = {
-                    notes: PropTypes.arrayOf(PropTypes.object),
-                deleteNote: PropTypes.object
+    notes: PropTypes.arrayOf(PropTypes.object),
+    deleteNote: PropTypes.object
 }

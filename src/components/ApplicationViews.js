@@ -1,6 +1,5 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
-import Button from 'react-bootstrap/Button';
 
 import RegisterForm from "./authentication/login"
 
@@ -33,12 +32,7 @@ class ApplicationViews extends Component {
         therapy: []
     };
 
-    // ///////////////////////////////////////////////////////////
-    ////// authenticate and get credentialed storage /////////////
-    //////////////do i need this?????/////////////////////////////
-
     isAuthenticated = () => sessionStorage.getItem("credentials") !== null || localStorage.getItem("credentials") !== null;
-
 
     // ///////////////////////////////////////////////////////////
     ////////////// API FUNCTIONS FOR CLIENTS ///////////////////////
@@ -125,7 +119,6 @@ class ApplicationViews extends Component {
     render() {
         return (
             <div className="navBeast">
-
                 <Route exact path="/callback" component={Callback} />
                 <Route
                     exact path="/register"

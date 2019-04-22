@@ -125,13 +125,15 @@ export default class ClientForm extends Component {
               placeholder="history"
             />
           </div>
-          <button className="submitBtn"
+          <div className="clientButton">
+          <button
             type="submit"
             onClick={this.constructNewClient}
             className="btn btn-primary"
           >
             Submit
           </button>
+          </div>
         </form>
       </React.Fragment>
     );

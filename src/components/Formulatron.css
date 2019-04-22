@@ -64,6 +64,7 @@
     border-radius: 25px;
     border: 1px solid rgb(64, 66, 62);
     padding: 20px;
+    width: 100%
 }
 
 .therapyForm{
@@ -71,7 +72,8 @@
     border-radius: 25px;
     border: 1px solid rgb(64, 66, 62);
     padding: 20px;
-    margin: 3px
+    margin: 10px;
+    width: 100%
 }
 
 .NoteForm{
@@ -101,6 +103,7 @@
     padding: 10px
 }
 
+
 .clientListLabel{
     display: flex;
     justify-content: center
@@ -110,8 +113,9 @@
     background: rgba(255, 255, 255, 0.7);
 }
 
-.submitBtn{
+
+/* .submitBtn{
     display: flex;
     justify-content: center;
     align-content: center
-}
+} */
