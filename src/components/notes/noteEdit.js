@@ -97,6 +97,7 @@ render() {
               onChange={this.handleFieldChange}
               id="maladaptivePattern"
               placeholder="Maladaptive Pattern"
+              value={this.state.maladaptivePattern}
             />
           </div>
           <div className="form-group">
@@ -108,6 +109,7 @@ render() {
               onChange={this.handleFieldChange}
               id="symptoms"
               placeholder="Symptoms"
+              value={this.state.symptoms}
             />
           </div>
           <div className="form-group">
@@ -119,6 +121,7 @@ render() {
               onChange={this.handleFieldChange}
               id="copingSkills"
               placeholder="Coping Skills"
+              value={this.state.copingSkills}
             />
           </div>
           <div className="form-group">
@@ -146,7 +149,7 @@ render() {
                     id="environmentId"
                     type="radio"
                     name="environmentRadio"
-                    value={environments.id}
+                    value={this.state.environment.id}
                     onChange={this.handleFieldChange}
                     className="environmentInput"
                   />

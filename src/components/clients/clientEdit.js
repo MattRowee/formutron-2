@@ -66,7 +66,7 @@ export default class EditForm extends Component {
     render() {
       return (
         <React.Fragment>
-          <form className="clientForm">
+          <form className="ClientForm">
             <div className="form-group">
               <label htmlFor="clientName">Client name</label>
               <input
@@ -133,6 +133,7 @@ export default class EditForm extends Component {
               value={this.state.history}
             />
           </div>
+            <div className="clientButton">
             <button
               type="submit"
               onClick={this.updateExistingClient}
@@ -140,6 +141,7 @@ export default class EditForm extends Component {
             >
               Submit
             </button>
+            </div>
           </form>
         </React.Fragment>
       );

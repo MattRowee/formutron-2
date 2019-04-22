@@ -165,7 +165,6 @@ export default class NoteForm extends Component {
             }
             )}
           </form>
-
           <button
             type="submit"
             onClick={this.constructNewNote}
