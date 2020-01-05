@@ -1,24 +1,10 @@
 {
   "users": [
     {
-      "aud": "auth0|5ca4f51672b3a411464fd83a",
       "name": "matt",
+      "email": "matt@gmail.com",
+      "password": "password",
       "id": 1
-    },
-    {
-      "aud": "auth0|5cacb1419f11d91033e6745b",
-      "name": "matt",
-      "id": 2
-    },
-    {
-      "aud": "auth0|5ca3b438cfd08c10ddc3176d",
-      "name": "test",
-      "id": 3
-    },
-    {
-      "aud": "auth0|5cbdfe2cdc106d104fe91c6e",
-      "name": "newuser",
-      "id": 4
     }
   ],
   "clients": [
@@ -141,6 +127,36 @@
       "history": "Kim speaks in binary when upset and folds herself into a pretzel.",
       "userId": "3",
       "id": 15
+    },
+    {
+      "name": "alskdfgj",
+      "age": "sdlfkgj",
+      "phoneNumber": "sdfg",
+      "address": "sdrg",
+      "email": "aerg",
+      "history": "sdfg",
+      "userId": "5",
+      "id": 16
+    },
+    {
+      "name": "aw",
+      "age": "a",
+      "phoneNumber": "a",
+      "address": "a",
+      "email": "a",
+      "history": "a",
+      "userId": "1",
+      "id": 17
+    },
+    {
+      "name": "Marky Mark",
+      "age": "19",
+      "phoneNumber": "305234252",
+      "address": "Here",
+      "email": "email@email.com",
+      "history": "Is a dude",
+      "userId": "1",
+      "id": 18
     }
   ],
   "notes": [
@@ -198,6 +214,17 @@
       "therapyId": 6,
       "clientId": 3,
       "id": 10
+    },
+    {
+      "id": 11,
+      "date": "2020-01-07",
+      "maladaptivePattern": "Is difficult to get along with",
+      "symptoms": "theft",
+      "copingSkills": "Diaphragmatic breathing",
+      "accompanied": false,
+      "environmentId": 2,
+      "therapyId": 3,
+      "clientId": 18
     }
   ],
   "environment": [

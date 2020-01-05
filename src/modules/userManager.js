@@ -5,7 +5,7 @@ export default {
     return fetch(`${remoteURL}/users/${id}`).then(e => e.json())
   },
   getAll: () => {
-    return fetch("http://localhost:5002/users").then(users =>
+    return fetch(`http://localhost:5002/users`).then(users =>
       users.json()
     );
   },

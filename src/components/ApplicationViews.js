@@ -1,7 +1,9 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 
-import RegisterForm from "./authentication/login"
+import Login from './authentication/login';
+import UserManager from '../modules/userManager.js';
+import EmployeeForm from "./employees/employeeForm.js";
 
 import ClientManager from "../modules/clientManager";
 import ClientList from "./clients/clientList";
@@ -29,10 +31,39 @@ class ApplicationViews extends Component {
         clients: [],
         notes: [],
         environment: [],
-        therapy: []
+        therapy: [],
+        employees:[]
     };
 
     isAuthenticated = () => sessionStorage.getItem("credentials") !== null || localStorage.getItem("credentials") !== null;
+
+    // ///////////////////////////////////////////////////////////
+    ////////////// API FUNCTIONS FOR USERS/EMPLOYEES /////////////
+    /////////////////////////////////////////////////////////////
+
+    registerEmployee = employeeObject =>
+    UserManager.postUser(employeeObject);
+
+  refreshEmployees = () =>
+    UserManager.getAll().then(parsedEmps => {
+      this.setState({ employees: parsedEmps });
+    });
+
+  deleteEmployee = id => {
+    return UserManager.deleteUser(id).then(employees =>
+      this.setState({
+        employees: employees
+      })
+    );
+  };
+  addEmployee = employeeObject =>
+    UserManager.postUser(employeeObject)
+      .then(() => UserManager.getAll())
+      .then(employees =>
+        this.setState({
+          employees: employees
+        })
+      );
 
     // ///////////////////////////////////////////////////////////
     ////////////// API FUNCTIONS FOR CLIENTS ///////////////////////
@@ -119,30 +150,33 @@ class ApplicationViews extends Component {
     render() {
         return (
             <div className="navBeast">
-                <Route exact path="/callback" component={Callback} />
+                {/* <Route exact path="/callback" component={Callback} /> */}
                 <Route
-                    exact path="/register"
-                    render={props => {
-                        return (
-                            <RegisterForm
-                                {...props}
-                                addUser={this.addUser}
-                                registerUser={this.registerUser}
-                                refreshUsers={this.refreshUsers}
-                            />
-                        );
-                    }}
-                />
+                    exact path="/login"
 
+                        render={props => {
+                          return <Login {...props} />
+                        }} />
+
+ {/* <Route
+          exact
+          path="/"
+          render={props => {
+            if (this.isAuthenticated()) {
+              return <LocationList locations={this.state.locations} />;
+            } else {
+              return <Redirect to="/login" />;
+            }
+          }}
+        /> */}
                 <Route
                     exact
                     path="/"
                     render={props => {
-                        if (Auth0Client.isAuthenticated()) {
+                        if (this.isAuthenticated()) {
                             return <ClientList {...props} clients={this.state.clients} />;
                         } else {
-                            Auth0Client.signIn()
-                            return null;
+                            return <Redirect to="/login" />;
                         }
                     }}
                 />
@@ -254,6 +288,24 @@ class ApplicationViews extends Component {
                         />
                     }}
                 />
+
+                {/* /////////////////////////////////////////////////////////////
+    /////////////////// ROUTES (NEW USERS/EMPLOYEES) //////////////////////////
+    ///////////////////////////////////////////////////////////// */}
+
+                      <Route
+          exact path="/register"
+          render={props => {
+            return (
+              <EmployeeForm
+                {...props}
+                addEmployee={this.addEmployee}
+                registerEmployee={this.registerEmployee}
+                refreshEmployees={this.refreshEmployees}
+              />
+            );
+          }}
+        />
 
             </div>
         )
