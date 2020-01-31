@@ -1,5 +1,15 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To run the Reactive Formutron Application:
 
+//EDIT THIS!!//
+
+Visit github and fork a repository from https://github.com/NewForce-at-Mountwest/reactive-nutshell-team-brandagamba. In your fork, type npm install. After installation is complete, use the "npm install react-bootstrap" and the "npm install --save moment react-moment" commands to install the necesary node modules.
+
+//// END EDIT
+
+ Open a new terminal window and run the 'json-server -p 5002 -w api/database.json' command to start your json server.
+
+Run the 'npm start' command in your terminal to launch the website.
+The application will load with a Sign In form, where the user can log in.
 ## Welcome to Formutron!
 intro
 Formutron is a web application which allows the user to generate and manage documentation on therapy clients. Users can create clients and draw up therapy notes for them. The app has several standard features, such as search bars, filtering and editing functionality for all clients and documentation.
