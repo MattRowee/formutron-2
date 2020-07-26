@@ -1,11 +1,11 @@
 // import "bootstrap/dist/css/bootstrap.min.css";
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-import auth0Client from "../authentication/Auth";
+// import auth0Client from "../authentication/Auth";
 
 class NavBar extends Component {
  signOut = () => {
-   auth0Client.signOut();
+  //  auth0Client.signOut();
    sessionStorage.clear()
    this.props.history.replace("/");
  };
@@ -16,16 +16,10 @@ class NavBar extends Component {
        <Link className="navbar-brand" to="/">
          Formutron
        </Link>
-       {!auth0Client.isAuthenticated() ? (
-         <button className="btn btn-success" onClick={auth0Client.signIn}>
-           Sign In
-         </button>
-       ) : (
+      
+       
          <React.Fragment>
            <div>
-             <label className="mr-2 text-blue">
-               {auth0Client.getProfile().name}
-             </label>
              <button
                className="btn btn-danger"
                onClick={() => {
@@ -43,7 +37,7 @@ class NavBar extends Component {
              </li>
            </ul>
          </React.Fragment>
-       )}
+       
      </nav>
    );
  }
