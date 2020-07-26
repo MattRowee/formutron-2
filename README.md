@@ -1,26 +1,21 @@
 To run the Reactive Formutron Application:
 
-//EDIT THIS!!//
-
-Visit github and fork a repository from https://github.com/NewForce-at-Mountwest/reactive-nutshell-team-brandagamba. In your fork, type npm install. After installation is complete, use the "npm install react-bootstrap" and the "npm install --save moment react-moment" commands to install the necesary node modules.
-
-//// END EDIT
+Visit github and fork a repository from https://github.com/MattRowee/formutron-2. In your fork, type npm install. After installation is complete, use the "npm install react-bootstrap" and the "npm install --save moment react-moment" commands to install the necesary node modules.
 
  Open a new terminal window and run the 'json-server -p 5002 -w api/database.json' command to start your json server.
 
 Run the 'npm start' command in your terminal to launch the website.
 The application will load with a Sign In form, where the user can log in.
+
 ## Welcome to Formutron!
-intro
+
 Formutron is a web application which allows the user to generate and manage documentation on therapy clients. Users can create clients and draw up therapy notes for them. The app has several standard features, such as search bars, filtering and editing functionality for all clients and documentation.
 
 The purpose of this application is to provide a simple, user-friendly tool for therapists and counselors to create documentation for their students and clients.
 
-The target user of this application is the working professional who desires a quick and easy way to create and organize their client documentation.
+The target user of this application is the working professional who desires a quick and easy way to create and organize notes on their client.
 
 ## Formutron UI
-
-
 
 ## Available Scripts
 
@@ -59,32 +54,4 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

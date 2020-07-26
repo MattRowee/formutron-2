@@ -5,216 +5,47 @@
       "email": "matt@gmail.com",
       "password": "password",
       "id": 1
+    },
+    {
+      "name": "",
+      "email": "test@testmail.com",
+      "password": "password",
+      "id": 2
     }
   ],
   "clients": [
     {
-      "name": "Orlo Jamos",
-      "age": "12",
-      "phoneNumber": "304-777-7777",
-      "address": "1642 Avondale Blvd",
-      "email": "orlo@elisio.edu",
-      "history": "ODD, aggressive, runs away and climbs buildings when upset",
-      "userId": "2",
-      "id": 1
-    },
-    {
-      "id": 3,
-      "name": "Johnny Holdings",
-      "age": "12",
-      "phoneNumber": "555-555-5553",
-      "address": "1115 E apache blvd apt 322",
-      "email": "jhold@formutron.com",
-      "history": "Intelligent class clown, compulsive petty theft",
-      "userId": "3"
-    },
-    {
-      "id": 4,
-      "name": "Jacky Kerouacky ",
-      "age": "14",
-      "phoneNumber": "555-555-5554",
-      "address": "2121 Dharma Lane",
-      "email": "jkontheroad@gmail.com",
-      "history": "Tests high in all subjects, skips school, has ran away from home on separate occasions",
-      "userId": "3"
-    },
-    {
-      "name": "Gnarlo Guthrie",
-      "age": "13",
-      "phoneNumber": "555-555-5551",
-      "address": "1111 E apache blvd apt 202",
-      "email": "ourland@school.com",
-      "history": "Gnarlo is bright, excells at math and sports, is disruptive in class, panics, runs away and climbs buildings.",
-      "userId": "3",
-      "id": 5
-    },
-    {
-      "name": "Jenni Snead",
-      "age": "33",
-      "phoneNumber": "304-555-5559",
-      "address": "4835 Poplar Level Rd, Louisville, KY",
-      "email": "Snead@sneadmail.com",
-      "history": "extensive background in karate, incorrigible liar",
-      "userId": "3",
-      "id": 8
-    },
-    {
-      "name": "Orlo Jamos",
-      "age": "15",
-      "phoneNumber": "69",
-      "address": "1111 E apache blvd apt 202",
-      "email": "m@m",
-      "history": "ODD, aggressive, runs away and climbs buildings when upset",
-      "userId": "3",
-      "id": 9
-    },
-    {
-      "name": "Dale Saul",
-      "age": "35",
-      "phoneNumber": "555-111-5555",
-      "address": "4342 Barboursville Lane",
-      "email": "Saulgreat@hotmail.com",
-      "history": "Creaky back, chronic frisbee golf addiction ",
-      "userId": "3",
-      "id": 10
-    },
-    {
-      "name": "Russ Miller",
-      "age": "31",
-      "phoneNumber": "555-222-4444",
-      "address": "2020 Salt Lick, Outwayne Rd",
-      "email": "Bitcoin@bitcoin.com",
-      "history": "creaky back, enmeshment with anime",
-      "userId": "3",
-      "id": 11
-    },
-    {
-      "name": "Nick Mitchell",
-      "age": "4000",
-      "phoneNumber": "555-111-1111",
-      "address": "2345 Kenova, Next to the airport",
-      "email": "YungGandalf@wizardmail.com",
-      "history": "Nick claims to control the economy of a fantasy world",
-      "userId": "3",
-      "id": 12
-    },
-    {
-      "name": "Josh Joseph",
-      "age": "36",
-      "phoneNumber": "555-111-0000",
-      "address": "987 Iron Rd, Ironton Ohio",
-      "email": "paradiddle@gmail.com",
-      "history": "Josh aggressively hits drum heads and cymbals, claims Dave Grohl is a \"god\"",
-      "userId": "3",
-      "id": 13
-    },
-    {
-      "name": "Charles Belcher",
-      "age": "38",
-      "phoneNumber": "111-222-3333",
-      "address": "7646 Kanawha Rd, Charleston",
-      "email": "Almostheaven@gmail.com",
-      "history": "Charles has a beautiful baritone voice, but hardly ever sings",
-      "userId": "3",
-      "id": 14
-    },
-    {
-      "name": "Kim Preece",
-      "age": "40",
-      "phoneNumber": "333-444-5555",
-      "address": "346 9th ave, Huntington WV",
-      "email": "yogatech@mountwest.com",
-      "history": "Kim speaks in binary when upset and folds herself into a pretzel.",
-      "userId": "3",
-      "id": 15
-    },
-    {
-      "name": "alskdfgj",
-      "age": "sdlfkgj",
-      "phoneNumber": "sdfg",
-      "address": "sdrg",
-      "email": "aerg",
-      "history": "sdfg",
-      "userId": "5",
-      "id": 16
-    },
-    {
-      "name": "aw",
-      "age": "a",
-      "phoneNumber": "a",
-      "address": "a",
-      "email": "a",
-      "history": "a",
-      "userId": "1",
-      "id": 17
-    },
-    {
-      "name": "Marky Mark",
+      "id": 18,
+      "name": "Marky Mark 2",
       "age": "19",
       "phoneNumber": "305234252",
       "address": "Here",
       "email": "email@email.com",
       "history": "Is a dude",
+      "userId": "1"
+    },
+    {
+      "name": "Kid 1",
+      "age": "25",
+      "phoneNumber": "304-867-5309",
+      "address": "510 Json Boulevard, Huntington, WV",
+      "email": "Fake@gmail.com",
+      "history": "This is where I would put the things they have done.",
       "userId": "1",
-      "id": 18
+      "id": 19
+    },
+    {
+      "name": "Ivan Drago",
+      "age": "10",
+      "phoneNumber": "1234566770",
+      "address": "Russia",
+      "email": "ImustBreakYou@Gmail.com",
+      "history": "Killed Apollo Creed",
+      "userId": "2",
+      "id": 20
     }
   ],
   "notes": [
-    {
-      "date": "2019-04-15",
-      "maladaptivePattern": "All or nothing thinking",
-      "symptoms": "panic",
-      "copingSkills": "progressive muscle relaxation",
-      "accompanied": true,
-      "environmentId": 3,
-      "therapyId": 6,
-      "clientId": 9,
-      "id": 6
-    },
-    {
-      "date": "2019-04-01",
-      "maladaptivePattern": "Emotional deprivation",
-      "symptoms": "Refuses to take part in group activities, frequent crying and yelling",
-      "copingSkills": "Self-monitoring, Behavioral activation",
-      "accompanied": false,
-      "environmentId": 1,
-      "therapyId": 5,
-      "clientId": 3,
-      "id": 7
-    },
-    {
-      "id": 8,
-      "date": "2019-04-04",
-      "maladaptivePattern": "Emotional Deprivation ",
-      "symptoms": "Johnny isolates himself when upset. Claims he doesn't have friends to confide in.",
-      "copingSkills": "Cognitive restructuring ",
-      "accompanied": true,
-      "environmentId": 3,
-      "therapyId": 5,
-      "clientId": 3
-    },
-    {
-      "id": 9,
-      "date": "2019-04-06",
-      "maladaptivePattern": "Enmeshment ",
-      "symptoms": "Johnny is hanging out with some rough kids at the expense of his educational development",
-      "copingSkills": "Self-monitoring, weighing pros and cons",
-      "accompanied": false,
-      "environmentId": null,
-      "therapyId": 6,
-      "clientId": 3
-    },
-    {
-      "date": "2019-04-13",
-      "maladaptivePattern": "All or nothing thinking",
-      "symptoms": "panic",
-      "copingSkills": "progressive muscle relaxation",
-      "accompanied": true,
-      "environmentId": 1,
-      "therapyId": 6,
-      "clientId": 3,
-      "id": 10
-    },
     {
       "id": 11,
       "date": "2020-01-07",
@@ -225,6 +56,17 @@
       "environmentId": 2,
       "therapyId": 3,
       "clientId": 18
+    },
+    {
+      "date": "2020-05-07",
+      "maladaptivePattern": "sdfgadg",
+      "symptoms": "asdfadf",
+      "copingSkills": "asdfadf",
+      "accompanied": true,
+      "environmentId": 2,
+      "therapyId": 1,
+      "clientId": 18,
+      "id": 12
     }
   ],
   "environment": [
