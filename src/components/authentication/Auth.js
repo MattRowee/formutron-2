@@ -1,9 +1,9 @@
-// import auth0 from 'auth0-js';
+// // import auth0 from 'auth0-js';
 // import AuthConfig from './AuthConfig';
 
 // class Auth {
 //   constructor() {
-//     this.auth0 = new auth0.WebAuth({
+//     this = new WebAuth({
 //       domain: AuthConfig.domain,
 //       audience: `https://${AuthConfig.domain}/userinfo`,
 //       clientID: AuthConfig.clientId,
@@ -32,7 +32,7 @@
 //   }
 
 //   signIn() {
-//     this.auth0.authorize();
+//     this.authorize();
 //   }
 
 //   setSession(authResult) {
@@ -44,21 +44,21 @@
 
 
 
-//   handleAuthentication() {
-//     return new Promise((resolve, reject) => {
-//       this.auth0.parseHash((err, authResult) => {
-//         if (err) return reject(err);
-//         if (!authResult || !authResult.idToken) {
-//           return reject(err);
-//         }
-//         this.setSession(authResult);
-//         resolve();
-//       });
-//     })
-//   }
+  // handleAuthentication() {
+  //   return new Promise((resolve, reject) => {
+  //     this.auth0.parseHash((err, authResult) => {
+  //       if (err) return reject(err);
+  //       if (!authResult || !authResult.idToken) {
+  //         return reject(err);
+  //       }
+  //       this.setSession(authResult);
+  //       resolve();
+  //     });
+  //   })
+  // }
 
 //   signOut() {
-//     this.auth0.logout({
+//     this.logout({
 //       returnTo: 'http://localhost:3000',
 //       clientID: AuthConfig.clientId,
 //     });
@@ -66,7 +66,7 @@
 
 //   silentAuth() {
 //     return new Promise((resolve, reject) => {
-//       this.auth0.checkSession({}, (err, authResult) => {
+//       this.checkSession({}, (err, authResult) => {
 //         if (err) return reject(err);
 //         this.setSession(authResult);
 //         resolve();
