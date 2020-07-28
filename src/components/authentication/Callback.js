@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import auth0Client from "./Auth";
+// import auth0Client from "./Auth";
 
 class Callback extends Component {
   async componentDidMount() {
-    await auth0Client.handleAuthentication();
+    // await auth0Client.handleAuthentication();
 
     // Needs to be refactored, put in its own module, etc
-    fetch(`http://localhost:5002/users?aud=${auth0Client.getProfile().sub}`)
+    fetch(`http://localhost:5002/users?`)
       .then(matchingUser => matchingUser.json())
       .then(matchingUser => {
         console.log("This is our array of employees that have the current user's aud", matchingUser);
@@ -18,8 +18,8 @@ class Callback extends Component {
 
           // Create a new user object to post to the db
           const newUser = {
-            aud: auth0Client.getProfile().sub,
-            name: auth0Client.getProfile().nickname
+            // aud: auth0Client.getProfile().sub,
+            // name: auth0Client.getProfile().nickname
           };
 
           // Post it!!

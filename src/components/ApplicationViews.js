@@ -19,7 +19,6 @@ import NoteEdit from "./notes/noteEdit"
 import EnvironmentManager from "../modules/environmentManager"
 import TherapyManager from "../modules/therapyManager"
 
-import Auth0Client from "./authentication/Auth";
 import Callback from "./authentication/Callback";
 
 

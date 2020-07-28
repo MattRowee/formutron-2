@@ -5,11 +5,12 @@
 }
 
 .navBeast {
+    background-color: #2d97ed;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 50px;
-    align-items: center
+    margin-top: 40px;
+    align-items: center;
 }
 .clients{
     display: flex;
@@ -112,8 +113,22 @@
 .navbar{
     background: rgba(255, 255, 255, 0.7);
 }
-
-
+.background-login{
+    background: whitesmoke;
+    padding: 20px;
+    height: 100%;
+    border: 2px solid grey;
+    border-radius: 2rem;
+    margin: 2rem 0rem;
+}
+.btn{
+    max-width: 200px;
+}
+html, body {
+    overflow: auto;
+    background-color: #2d97ed;
+    height: 100%;
+  }
 /* .submitBtn{
     display: flex;
     justify-content: center;
