@@ -58,28 +58,29 @@ export default class Login extends Component {
     return (
       <React.Fragment>
         <div class="background-login">
-          <form onSubmit={this.handleLogin}>
-            <h1 className="h3 mb-3 font-weight-normal">Welcome to Formutron! Please sign in or create an account.</h1>
+          <form class="login-form" onSubmit={this.handleLogin}>
+            <h1 className="h3 mb-3 font-weight-normal">Welcome to Formutron!</h1>
+            <h3 className="h5 mb-3 font-weight-normal">Please sign in or create an account</h3>
             <label class="row" htmlFor="inputEmail">Email address</label>
             <input
-              class="row"
+              class="login-input row"
               onChange={this.handleFieldChange}
               type="email"
               id="email"
-              placeholder="Email address"
+              // placeholder="Email address"
               required=""
               autoFocus=""
             />
             <label class="row" htmlFor="inputPassword">Password</label>
             <input
-              class="row"
+              class="login-input row"
               onChange={this.handleFieldChange}
               type="password"
               id="password"
-              placeholder="Password"
+              // placeholder="Password"
               required=""
             />
-            <label htmlFor="rememberMe">Remember me?</label>
+            <label htmlFor="rememberMe">Remember me</label>
             <input
               class="inline-block"
               type="checkbox"
