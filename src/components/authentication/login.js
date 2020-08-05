@@ -61,9 +61,9 @@ export default class Login extends Component {
           <form class="login-form" onSubmit={this.handleLogin}>
             <h1 className="h3 mb-3 font-weight-normal">Welcome to Formutron!</h1>
             <h3 className="h5 mb-3 font-weight-normal">Please sign in or create an account</h3>
-            <label class="row" htmlFor="inputEmail">Email address</label>
+            <label htmlFor="inputEmail">Email address</label>
             <input
-              class="login-input row"
+              class="login-input"
               onChange={this.handleFieldChange}
               type="email"
               id="email"
@@ -71,34 +71,37 @@ export default class Login extends Component {
               required=""
               autoFocus=""
             />
-            <label class="row" htmlFor="inputPassword">Password</label>
+            <label htmlFor="inputPassword">Password</label>
             <input
-              class="login-input row"
+              class="login-input"
               onChange={this.handleFieldChange}
               type="password"
               id="password"
               // placeholder="Password"
               required=""
             />
-            <label htmlFor="rememberMe">Remember me</label>
+            <label class="checkboxLabel" htmlFor="rememberMe">Remember me</label>
             <input
               class="inline-block"
               type="checkbox"
               onChange={this.handleFieldChange}
               id="rememberMe"
             />
-            
-            <button className="btn btn-success btn-lg btn-block" type="submit">
-              Sign in
+            <div class="buttonContainer-login">
+              <button className="btn btn-lg signIn-btn" type="submit">
+                Sign in
           </button>
-          <h4>{this.state.errorMessage}</h4>
-          
-          <button
-            className="btn btn-primary btn-lg btn-block"
-            onClick={() => this.props.history.push("/register")}
-          >
-            Create an Account
+              <h4>{this.state.errorMessage}</h4>
+
+              <button
+                className="btn btn-lg createAccount-btn"
+                onClick={() => this.props.history.push("/register")}
+              >
+                Create Account
         </button>
+
+
+            </div>
           </form>
         </div>
       </React.Fragment>
