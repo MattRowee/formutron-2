@@ -121,7 +121,6 @@
     border: 2px solid white;
     border-radius: 1rem;
     margin: 2rem 0rem;
-    text-align: center;
 }
 
 .btn{
@@ -138,12 +137,46 @@ html, body {
     border-radius: .2rem;
     background-color: white;
     justify-content: left;
+    max-width: 400px;
   }
   .login-input{
     width: 100%;
   }
-/* .submitBtn{
+
+  #rememberMe {
+    position: relative;
+    top: 2px;
+    left: 12px;
+  }
+
+  .signIn-btn{
+    /* background-image: pink; */
+    /* background-image: linear-gradient(to left, whitesmoke, rgb(75, 77, 219)); */
+    border: 1px solid grey !important;
+
+  }
+  .signIn-btn:hover{
+    color: whitesmoke !important;
+    background-color: rgb(75, 77, 219);
+    background-image: none;
+    border: none;
+  }
+  .createAccount-btn{
+    /* background-color: rgb(210, 218, 111); */
+    /* background-image:  rgb(62, 172, 62); */
+    /* background-image: linear-gradient(to left, whitesmoke, rgb(62, 172, 62)); */
+    border: 1px solid grey !important;
+  }
+  .createAccount-btn:hover{
+      color: whitesmoke !important;
+      background-color: rgb(62, 172, 62);
+      background-image: none;
+      border: none!important;
+  }
+
+  .buttonContainer-login{
     display: flex;
-    justify-content: center;
-    align-content: center
-} */
+    justify-content: space-between;
+
+  }
+
