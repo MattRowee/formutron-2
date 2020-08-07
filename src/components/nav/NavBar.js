@@ -29,13 +29,13 @@ class NavBar extends Component {
                Sign Out
              </button>
            </div>
-           <ul className="nav nav-pills">
+           {/* <ul className="nav nav-pills">
            <li className="nav-item">
                <Link className="nav-link" to="/">
                  Home
                </Link>
              </li>
-           </ul>
+           </ul> */}
          </React.Fragment>
        
      </nav>
