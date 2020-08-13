@@ -180,3 +180,8 @@ html, body {
 
   }
 
+  .errMess-container{
+    display: block;
+    text-align: center;
+    padding: 10px 0px 0px;
+  }

@@ -91,7 +91,7 @@ export default class Login extends Component {
               <button className="btn btn-lg signIn-btn" type="submit">
                 Sign in
           </button>
-              <h4>{this.state.errorMessage}</h4>
+              {/* <h4>{this.state.errorMessage}</h4> */}
 
               <button
                 className="btn btn-lg createAccount-btn"
@@ -99,9 +99,10 @@ export default class Login extends Component {
               >
                 Create Account
         </button>
-
-
             </div>
+              <div class="errMess-container">
+                <h4>{this.state.errorMessage}</h4>
+              </div>
           </form>
         </div>
       </React.Fragment>
