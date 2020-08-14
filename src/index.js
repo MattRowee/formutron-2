@@ -10,7 +10,8 @@ ReactDOM.render(
     <Router>
         <Formulatron />
     </Router>
-    , document.getElementById('root'))
+    , document.getElementById('root')
+    )
 
 
 

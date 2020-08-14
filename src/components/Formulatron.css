@@ -12,6 +12,7 @@
     justify-content: center;
     margin-top: 40px;
     align-items: center;
+    height: 100%;
 }
 .clients{
     display: flex;
@@ -117,10 +118,11 @@
 .background-login{
     background-image: linear-gradient(to right, rgb(248, 244, 244), #5caebd);
     padding: 75px;
-    height: 100%;
     border: 2px solid white;
     border-radius: 1rem;
     margin: 2rem 0rem;
+    position: relative;
+    bottom: 60px;
 }
 
 .btn{
@@ -185,3 +187,9 @@ html, body {
     text-align: center;
     padding: 10px 0px 0px;
   }
+
+  #root{
+    height: 100%;
+  }
+
+  
