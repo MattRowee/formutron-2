@@ -1,5 +1,6 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
+import NavBar from "./nav/NavBar"
 
 import Login from './authentication/login';
 import UserManager from '../modules/userManager.js';
@@ -31,7 +32,7 @@ class ApplicationViews extends Component {
         notes: [],
         environment: [],
         therapy: [],
-        employees:[]
+        employees: []
     };
 
     isAuthenticated = () => sessionStorage.getItem("credentials") !== null || localStorage.getItem("credentials") !== null;
@@ -41,28 +42,28 @@ class ApplicationViews extends Component {
     /////////////////////////////////////////////////////////////
 
     registerEmployee = employeeObject =>
-    UserManager.postUser(employeeObject);
+        UserManager.postUser(employeeObject);
 
-  refreshEmployees = () =>
-    UserManager.getAll().then(parsedEmps => {
-      this.setState({ employees: parsedEmps });
-    });
+    refreshEmployees = () =>
+        UserManager.getAll().then(parsedEmps => {
+            this.setState({ employees: parsedEmps });
+        });
 
-  deleteEmployee = id => {
-    return UserManager.deleteUser(id).then(employees =>
-      this.setState({
-        employees: employees
-      })
-    );
-  };
-  addEmployee = employeeObject =>
-    UserManager.postUser(employeeObject)
-      .then(() => UserManager.getAll())
-      .then(employees =>
-        this.setState({
-          employees: employees
-        })
-      );
+    deleteEmployee = id => {
+        return UserManager.deleteUser(id).then(employees =>
+            this.setState({
+                employees: employees
+            })
+        );
+    };
+    addEmployee = employeeObject =>
+        UserManager.postUser(employeeObject)
+            .then(() => UserManager.getAll())
+            .then(employees =>
+                this.setState({
+                    employees: employees
+                })
+            );
 
     // ///////////////////////////////////////////////////////////
     ////////////// API FUNCTIONS FOR CLIENTS ///////////////////////
@@ -137,7 +138,7 @@ class ApplicationViews extends Component {
             .then(EnvironmentManager.getAll)
             .then(environment => (newState.environment = environment))
             .then(TherapyManager.getAll)
-            .then(therapy => (newState.therapy =therapy))
+            .then(therapy => (newState.therapy = therapy))
             .then(() => this.setState(newState))
 
     }
@@ -153,27 +154,22 @@ class ApplicationViews extends Component {
                 <Route
                     exact path="/login"
 
-                        render={props => {
-                          return <Login {...props} />
-                        }} />
+                    render={props => {
+                        return <Login {...props} />
+                    }} />
 
- {/* <Route
-          exact
-          path="/"
-          render={props => {
-            if (this.isAuthenticated()) {
-              return <LocationList locations={this.state.locations} />;
-            } else {
-              return <Redirect to="/login" />;
-            }
-          }}
-        /> */}
+
                 <Route
                     exact
                     path="/"
                     render={props => {
                         if (this.isAuthenticated()) {
-                            return <ClientList {...props} clients={this.state.clients} />;
+                            return (
+                            <React.Fragment>
+                                <NavBar />
+                                <ClientList {...props} clients={this.state.clients} />;
+                            </React.Fragment>
+                            )
                         } else {
                             return <Redirect to="/login" />;
                         }
@@ -274,7 +270,7 @@ class ApplicationViews extends Component {
                                 <Redirect to="/login" />
                             )
                     }} />
-                     <Route
+                <Route
                     path="/notes/:noteId(\d+)/edit"
                     render={props => {
                         return <NoteEdit
@@ -292,19 +288,19 @@ class ApplicationViews extends Component {
     /////////////////// ROUTES (NEW USERS/EMPLOYEES) //////////////////////////
     ///////////////////////////////////////////////////////////// */}
 
-                      <Route
-          exact path="/register"
-          render={props => {
-            return (
-              <EmployeeForm
-                {...props}
-                addEmployee={this.addEmployee}
-                registerEmployee={this.registerEmployee}
-                refreshEmployees={this.refreshEmployees}
-              />
-            );
-          }}
-        />
+                <Route
+                    exact path="/register"
+                    render={props => {
+                        return (
+                            <EmployeeForm
+                                {...props}
+                                addEmployee={this.addEmployee}
+                                registerEmployee={this.registerEmployee}
+                                refreshEmployees={this.refreshEmployees}
+                            />
+                        );
+                    }}
+                />
 
             </div>
         )

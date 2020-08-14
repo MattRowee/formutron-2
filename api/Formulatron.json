@@ -5,24 +5,6 @@
       "email": "matt@gmail.com",
       "password": "password",
       "id": 1
-    },
-    {
-      "name": "",
-      "email": "test@testmail.com",
-      "password": "password",
-      "id": 2
-    },
-    {
-      "name": "",
-      "email": "karen@karenmail",
-      "password": "password",
-      "id": 3
-    },
-    {
-      "name": "",
-      "email": "cream@creamail",
-      "password": "password",
-      "id": 4
     }
   ],
   "clients": [
