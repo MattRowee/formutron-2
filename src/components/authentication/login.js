@@ -61,7 +61,18 @@ export default class Login extends Component {
           <form class="login-form" onSubmit={this.handleLogin}>
             <h1 className="h3 mb-3 font-weight-normal">Welcome to Formutron!</h1>
             <h3 className="h5 mb-3 font-weight-normal">Please sign in or create an account</h3>
-            <label htmlFor="inputEmail">Email address</label>
+            
+            {/* <label htmlFor="inputName">Name</label>
+            <input
+              class="login-input"
+              onChange={this.handleFieldChange}
+              type="name"
+              id="name"
+              // placeholder="Email address"
+              required=""
+              autoFocus=""
+            /> */}
+            <label htmlFor="inputName">Email</label>
             <input
               class="login-input"
               onChange={this.handleFieldChange}

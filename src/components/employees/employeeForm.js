@@ -35,7 +35,11 @@ export default class EmployeeForm extends Component {
       return null;
       // returning null just bumps us out of the function so the rest of it doesnt' run.
     }
-
+    if (this.state.name.length < 1){
+      const errorMessage ="Please enter a name.";
+      this.setState({ errorMessage: errorMessage});
+      return null;
+    }
       const employeeToPost = {
         name: this.state.name,
         email: this.state.email,
