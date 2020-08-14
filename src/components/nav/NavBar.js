@@ -1,11 +1,9 @@
 // import "bootstrap/dist/css/bootstrap.min.css";
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-// import auth0Client from "../authentication/Auth";
 
 class NavBar extends Component {
  signOut = () => {
-  //  auth0Client.signOut();
    sessionStorage.clear()
    this.props.history.replace("/");
  };
