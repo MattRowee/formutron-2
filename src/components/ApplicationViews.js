@@ -184,12 +184,16 @@ class ApplicationViews extends Component {
                     path="/clients"
                     render={props => {
                         return this.isAuthenticated() ? (
-                            <ClientList
-                                {...props}
-                                clients={this.state.clients}
-                                deleteClient={this.deleteClient}
-                            />
-                        ) : (
+                            <React.Fragment>
+                                <NavBar />
+                                <ClientList
+                                    {...props}
+                                    clients={this.state.clients}
+                                    deleteClient={this.deleteClient}
+                                />
+                            </React.Fragment>
+                        ) 
+                        : (
                                 <Redirect to="/login" />
                             );
                     }}
@@ -199,10 +203,14 @@ class ApplicationViews extends Component {
                     exact path="/clients/new"
                     render={(props) => {
                         return this.isAuthenticated() ? (
-                            <ClientForm {...props}
-                                addClient={this.addClient}
-                                clients={this.state.clients} />
-                        ) : (
+                            <React.Fragment>
+                                <NavBar />
+                                <ClientForm {...props}
+                                    addClient={this.addClient}
+                                    clients={this.state.clients} />
+                            </React.Fragment>
+                            ) 
+                            : (
                                 <Redirect to="/login" />
                             )
                     }} />
