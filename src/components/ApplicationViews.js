@@ -165,10 +165,10 @@ class ApplicationViews extends Component {
                     render={props => {
                         if (this.isAuthenticated()) {
                             return (
-                            <React.Fragment>
-                                <NavBar />
-                                <ClientList {...props} clients={this.state.clients} />;
-                            </React.Fragment>
+                                <React.Fragment>
+                                    <NavBar />
+                                    <ClientList {...props} clients={this.state.clients} />;
+                                </React.Fragment>
                             )
                         } else {
                             return <Redirect to="/login" />;
@@ -192,8 +192,8 @@ class ApplicationViews extends Component {
                                     deleteClient={this.deleteClient}
                                 />
                             </React.Fragment>
-                        ) 
-                        : (
+                        )
+                            : (
                                 <Redirect to="/login" />
                             );
                     }}
@@ -209,7 +209,7 @@ class ApplicationViews extends Component {
                                     addClient={this.addClient}
                                     clients={this.state.clients} />
                             </React.Fragment>
-                            ) 
+                        )
                             : (
                                 <Redirect to="/login" />
                             )
@@ -219,15 +219,18 @@ class ApplicationViews extends Component {
                     exact path="/clients/:clientId(\d+)"
                     render={props => {
                         return this.isAuthenticated() ? (
-                            <Client
-                                {...props}
-                                deleteClient={this.deleteClient}
-                                clients={this.state.clients}
-                                addNote={this.addNote}
-                                notes={this.state.notes}
-                                environment={this.state.environment}
-                                therapy={this.state.therapy}
-                            />
+                            <React.Fragment>
+                                <NavBar />
+                                <Client
+                                    {...props}
+                                    deleteClient={this.deleteClient}
+                                    clients={this.state.clients}
+                                    addNote={this.addNote}
+                                    notes={this.state.notes}
+                                    environment={this.state.environment}
+                                    therapy={this.state.therapy}
+                                />
+                            </React.Fragment>
                         ) : (
                                 <Redirect to="/login" />
                             )
@@ -236,11 +239,16 @@ class ApplicationViews extends Component {
                 <Route
                     path="/clients/:clientId(\d+)/edit"
                     render={props => {
-                        return <ClientEdit
-                            {...props}
-                            clients={this.state.clients}
-                            updateClient={this.updateClient}
-                        />
+                        return  (
+                            <React.Fragment>
+                                <NavBar />
+                                <ClientEdit
+                                    {...props}
+                                    clients={this.state.clients}
+                                    updateClient={this.updateClient}
+                                />
+                            </React.Fragment>
+                        )
                     }}
                 />
 
@@ -251,14 +259,17 @@ class ApplicationViews extends Component {
                     exact path="/notes/:noteId(\d+)"
                     render={props => {
                         return this.isAuthenticated() ? (
-                            <NoteDetail
-                                {...props}
-                                deleteNote={this.deleteNote}
-                                notes={this.state.notes}
-                                therapy={this.state.therapy}
-                                environment={this.state.environment}
-                                updateNote={this.updateNote}
-                            />
+                            <React.Fragment>
+                                <NavBar />
+                                <NoteDetail
+                                    {...props}
+                                    deleteNote={this.deleteNote}
+                                    notes={this.state.notes}
+                                    therapy={this.state.therapy}
+                                    environment={this.state.environment}
+                                    updateNote={this.updateNote}
+                                />
+                            </React.Fragment>
                         ) : (
                                 <Redirect tp="/login" />
                             )
@@ -268,12 +279,16 @@ class ApplicationViews extends Component {
                     exact path="/notes/new/:clientId(\d+)"
                     render={(props) => {
                         return this.isAuthenticated() ? (
-                            <NoteForm {...props}
-                                addNote={this.addNote}
-                                notes={this.state.notes}
-                                therapy={this.state.therapy}
-                                environment={this.state.environment}
-                            />
+
+                            <React.Fragment>
+                                <NavBar />
+                                <NoteForm {...props}
+                                    addNote={this.addNote}
+                                    notes={this.state.notes}
+                                    therapy={this.state.therapy}
+                                    environment={this.state.environment}
+                                />
+                            </React.Fragment>
                         ) : (
                                 <Redirect to="/login" />
                             )
@@ -281,14 +296,19 @@ class ApplicationViews extends Component {
                 <Route
                     path="/notes/:noteId(\d+)/edit"
                     render={props => {
-                        return <NoteEdit
-                            {...props}
-                            notes={this.state.notes}
-                            updateNote={this.updateNote}
-                            clients={this.state.clients}
-                            therapy={this.state.therapy}
-                            environment={this.state.environment}
-                        />
+                        return(
+                            <React.Fragment>
+                                <NavBar />
+                                <NoteEdit
+                                    {...props}
+                                    notes={this.state.notes}
+                                    updateNote={this.updateNote}
+                                    clients={this.state.clients}
+                                    therapy={this.state.therapy}
+                                    environment={this.state.environment}
+                                />
+                            </React.Fragment>
+                        )
                     }}
                 />
 
@@ -300,12 +320,15 @@ class ApplicationViews extends Component {
                     exact path="/register"
                     render={props => {
                         return (
-                            <EmployeeForm
-                                {...props}
-                                addEmployee={this.addEmployee}
-                                registerEmployee={this.registerEmployee}
-                                refreshEmployees={this.refreshEmployees}
-                            />
+                            <React.Fragment>
+                                <NavBar />
+                                <EmployeeForm
+                                    {...props}
+                                    addEmployee={this.addEmployee}
+                                    registerEmployee={this.registerEmployee}
+                                    refreshEmployees={this.refreshEmployees}
+                                />
+                            </React.Fragment>
                         );
                     }}
                 />
