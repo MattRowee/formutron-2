@@ -5,6 +5,7 @@ import NavBar from "./nav/NavBar"
 import Login from './authentication/login';
 import UserManager from '../modules/userManager.js';
 import EmployeeForm from "./employees/employeeForm.js";
+import EmployeeList from "./employees/employeeList";
 
 import ClientManager from "../modules/clientManager";
 import ClientList from "./clients/clientList";
@@ -139,6 +140,8 @@ class ApplicationViews extends Component {
             .then(environment => (newState.environment = environment))
             .then(TherapyManager.getAll)
             .then(therapy => (newState.therapy = therapy))
+            .then(UserManager.getAll)
+            .then(employees =>(newState.employees = employees))
             .then(() => this.setState(newState))
 
     }
@@ -327,6 +330,20 @@ class ApplicationViews extends Component {
                                     addEmployee={this.addEmployee}
                                     registerEmployee={this.registerEmployee}
                                     refreshEmployees={this.refreshEmployees}
+                                />
+                            </React.Fragment>
+                        );
+                    }}
+                />
+                <Route
+                    exact path="/employees"
+                    render={props => {
+                        return (
+                            <React.Fragment>
+                                <NavBar />
+                                <EmployeeList
+                                    {...props}
+                                    employees={this.state.employees}
                                 />
                             </React.Fragment>
                         );
