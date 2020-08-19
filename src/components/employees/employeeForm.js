@@ -29,13 +29,13 @@ export default class EmployeeForm extends Component {
      */
   constructNewEmployee = evt => {
     evt.preventDefault();
-    if (this.state.password !== this.state.passwordConfirm) {
-      const errorMessage ="Your passwords didn't match. Please try harder.";
+    if (this.state.password !== this.state.passwordConfirm || this.state.password == '') {
+      const errorMessage ="Your passwords didn't match or you didnt enter one. Try again.";
       this.setState({ errorMessage: errorMessage});
       return null;
       // returning null just bumps us out of the function so the rest of it doesnt' run.
     }
-    if (this.state.name.length < 1){
+    if (this.state.name === null || this.state.name == ""){
       const errorMessage ="Please enter a name.";
       this.setState({ errorMessage: errorMessage});
       return null;
@@ -75,7 +75,7 @@ export default class EmployeeForm extends Component {
               required
               className="form-control"
               onChange={this.handleFieldChange}
-              id="employeeName"
+              id="name"
             />
           </div>
           <div className="form-group">
