@@ -49,6 +49,16 @@
       "history": "Killed Apollo Creed",
       "userId": "2",
       "id": 20
+    },
+    {
+      "name": "Kiefer",
+      "age": "30",
+      "phoneNumber": "123456789",
+      "address": "24 Action Blvd",
+      "email": "Keifer@Keifmail",
+      "history": "Action Superstar",
+      "userId": "3",
+      "id": 21
     }
   ],
   "notes": [
