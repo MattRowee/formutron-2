@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ResourceCard from "../generics/ResourceCard";
+import EmployeeCard from "../generics/EmployeeCard";
 
 export default class EmployeeList extends Component {
 
@@ -13,7 +13,7 @@ export default class EmployeeList extends Component {
         <section className="employees">
           {this.props.employees.map(singleEmployee => {
               console.log(singleEmployee)
-             return  <ResourceCard key= {singleEmployee.id} resource={singleEmployee} route="employees"/>
+             return  <EmployeeCard key= {singleEmployee.id} resource={singleEmployee} route="employees"/>
             })}
         </section>
 
