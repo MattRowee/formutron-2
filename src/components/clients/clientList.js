@@ -29,8 +29,8 @@ export default class ClientList extends Component {
       return (
         client.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !==
         -1
-      );
-    });
+      )
+    })
     return (
 
       <React.Fragment>
