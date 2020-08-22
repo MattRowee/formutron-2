@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
 import Modal from 'react-bootstrap/Modal'
+import { render } from 'react-dom';
 
-// function Example() {
-//     // const [show, setShow] = useState(false);
-  
-//     const handleClose = () => setShow(false);
-//     const handleShow = () => setShow(true);
-//     return (
-//         <>
-//           {/* <Button variant="primary" onClick={handleShow}>
-//             Launch demo modal
-//           </Button> */}
+
+// function TransferClient(){
+//     console.log("are we getting anywhere?");
     
-//           <Modal show={show} onHide={handleClose}>
+// return(
+
+//     <Modal>
 //             {/* <Modal.Header>
 //               <Modal.Title>Modal heading</Modal.Title>
 //             </Modal.Header> */}
@@ -21,14 +17,21 @@ import Modal from 'react-bootstrap/Modal'
              
 //             </Modal.Footer> */}
 //           </Modal>
-//         </>
-//       );
-//     }
-function TransferClient(){
-    console.log("are we getting anywhere?")
-}
+// )
+    
+// }
 
 export default class EmployeeCard extends Component {
+    state = { show: false };
+
+  showModal = () => {
+    this.setState({ show: true });
+  };
+
+  hideModal = () => {
+    this.setState({ show: false });
+  };
+
     render() {
         return (
             <div className="card" >
@@ -37,8 +40,12 @@ export default class EmployeeCard extends Component {
                         <img src={this.props.resource.image} className="" />
                         <h4 className="clientCardName">{this.props.resource.name}</h4>
                         <h6 className="clientCardEmail">{this.props.resource.email}</h6>                       
-                            <button className="nav-link"  onClick={TransferClient} >Transfer a Client</button>                      
+                            <button className="nav-link"  onClick={this.showModal} >Transfer a Client</button>                      
                     </h5>
+                    <Modal show={this.state.show} handleClose={this.hideModal}>
+                        <p>Modal</p>
+                        <p>Data</p>
+                    </Modal>
                 </div>
             </div>);
     }
