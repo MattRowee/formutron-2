@@ -44,6 +44,7 @@ export default class EmployeeCard extends Component {
                     </h5>
                     <Modal show={this.state.show} handleClose={this.hideModal}>
                         <p>Modal</p>
+                        <button className='nav-button' onClick={this.hideModal}>Hello World</button>
                         <p>Data</p>
                     </Modal>
                 </div>
