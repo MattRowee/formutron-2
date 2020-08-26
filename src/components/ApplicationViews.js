@@ -344,6 +344,7 @@ class ApplicationViews extends Component {
                                 <EmployeeList
                                     {...props}
                                     employees={this.state.employees}
+                                    clients={this.state.clients}
                                 />
                             </React.Fragment>
                         );
