@@ -36,7 +36,7 @@ export default class EmployeeCard extends Component {
                         <h4 className="clientCardName">{this.props.resource.name}</h4>
                         <h6 className="clientCardEmail">{this.props.resource.email}</h6>                       
                             <button className="nav-link"  onClick={this.showModal} >Transfer a Client</button>    
-                            
+                            {/*  Build out this modal to print out Client info and Edit Clients userId */}
                     </h5>
                     <Modal show={this.state.show} handleClose={this.hideModal}>
                         <p>Which client would you like to transfer?</p>
