@@ -83,6 +83,17 @@
       "therapyId": 1,
       "clientId": 18,
       "id": 12
+    },
+    {
+      "id": 13,
+      "date": "2020-08-11",
+      "maladaptivePattern": "adfda",
+      "symptoms": "asdfds",
+      "copingSkills": "edited",
+      "accompanied": false,
+      "environmentId": 2,
+      "therapyId": 1,
+      "clientId": 19
     }
   ],
   "environment": [

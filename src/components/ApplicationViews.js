@@ -58,6 +58,7 @@ class ApplicationViews extends Component {
         );
     };
     addEmployee = employeeObject =>
+    
         UserManager.postUser(employeeObject)
             .then(() => UserManager.getAll())
             .then(employees =>
