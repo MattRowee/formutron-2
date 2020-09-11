@@ -20,7 +20,7 @@ export default class EmployeeCard extends Component {
 
   showModal = () => {
     this.setState({ show: true });
-    console.log(this.state);
+    // console.log(this.state);
   };
 
   hideModal = () => {
@@ -31,17 +31,23 @@ export default class EmployeeCard extends Component {
         return (
             <div className="card" >
                 <div className="card-body">
-                    <h5 className="card-title">
+                    <h5 className="card-title"></h5>
                         <img src={this.props.resource.image} className="" />
                         <h4 className="clientCardName">{this.props.resource.name}</h4>
                         <h6 className="clientCardEmail">{this.props.resource.email}</h6>                       
                             <button className="nav-link"  onClick={this.showModal} >Transfer a Client</button>    
                             {/*  Build out this modal to print out Client info and Edit Clients userId */}
-                    </h5>
-                    <Modal show={this.state.show} handleClose={this.hideModal}>
+                    
+                    <Modal show={this.state.show}>
                         <p>Which client would you like to transfer?</p>
                         {this.state.clients.map(singleClient => {
-                                console.log(singleClient);
+                                console.log(singleClient, this.props.resource.id);
+                                 if(singleClient.userId === parseInt(this.props.resource.id))
+                                 // sessionStorage.getItem('credentials')
+                                 {
+                                    console.log(singleClient.name);
+                            //    return  <p>{singleClient.name}</p>
+                                }
                         })}
                         <button className='nav-button' onClick={this.hideModal}>Hello World</button>
                     </Modal>
@@ -49,3 +55,4 @@ export default class EmployeeCard extends Component {
             </div>);
     }
 }
+// handleClose={this.props.hideModal}
