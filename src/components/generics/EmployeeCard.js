@@ -41,15 +41,15 @@ export default class EmployeeCard extends Component {
                     <Modal show={this.state.show}>
                         <p>Which client would you like to transfer?</p>
                         {this.state.clients.map(singleClient => {
-                                console.log(singleClient, this.props.resource.id);
-                                 if(singleClient.userId === parseInt(this.props.resource.id))
+                                // console.log(singleClient, this.props.resource.id);
+                                 if(singleClient.userId === this.props.resource.id)
                                  // sessionStorage.getItem('credentials')
                                  {
                                     console.log(singleClient.name);
-                            //    return  <p>{singleClient.name}</p>
+                               return <p className="clientCardName">{singleClient.name}</p>
                                 }
                         })}
-                        <button className='nav-button' onClick={this.hideModal}>Hello World</button>
+                        <button className='nav-button' onClick={this.hideModal}>Close Modal</button>
                     </Modal>
                 </div>
             </div>);
