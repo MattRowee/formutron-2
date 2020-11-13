@@ -17,6 +17,12 @@
       "email": "jenni@jennimail",
       "password": "password",
       "id": 3
+    },
+    {
+      "name": "Tammy",
+      "email": "tammy@tammymail",
+      "password": "password",
+      "id": 4
     }
   ],
   "clients": [
@@ -59,6 +65,36 @@
       "history": "Action Superstar",
       "userId": "3",
       "id": 21
+    },
+    {
+      "name": "Burke",
+      "age": "34",
+      "phoneNumber": "3333",
+      "address": "canada",
+      "email": "candad",
+      "history": "candad",
+      "userId": "1",
+      "id": 22
+    },
+    {
+      "id": 23,
+      "name": "asd",
+      "age": "asdf",
+      "phoneNumber": "asdfas",
+      "address": "asdfaa",
+      "email": "asdfasf",
+      "history": "asdfasdf",
+      "userId": "4"
+    },
+    {
+      "name": "Marcus Markovitch",
+      "age": "15",
+      "phoneNumber": "304-529-4857",
+      "address": "100 Sweet Street, Keyser WV 25840",
+      "email": "Marko@gmail.com",
+      "history": "This kid, you wouldnt believe it if I told you.",
+      "userId": "4",
+      "id": 24
     }
   ],
   "notes": [
@@ -94,6 +130,17 @@
       "environmentId": 2,
       "therapyId": 1,
       "clientId": 19
+    },
+    {
+      "date": "2020-11-18",
+      "maladaptivePattern": "Disruptive Behavior",
+      "symptoms": "Yelling in class, theft",
+      "copingSkills": "Diaphragmatic breathing, meditation",
+      "accompanied": true,
+      "environmentId": 3,
+      "therapyId": 5,
+      "clientId": 24,
+      "id": 14
     }
   ],
   "environment": [

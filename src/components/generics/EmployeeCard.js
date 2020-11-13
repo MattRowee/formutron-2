@@ -20,7 +20,7 @@ export default class EmployeeCard extends Component {
 
   showModal = () => {
     this.setState({ show: true });
-    // console.log(this.state);
+    console.log(this.state);
   };
 
   hideModal = () => {
@@ -41,12 +41,12 @@ export default class EmployeeCard extends Component {
                     <Modal show={this.state.show}>
                         <p>Which client would you like to transfer?</p>
                         {this.state.clients.map(singleClient => {
-                                // console.log(singleClient, this.props.resource.id);
-                                 if(singleClient.userId === this.props.resource.id)
+                                console.log("this is singleClient and this.props.resource.id", singleClient.userId, this.props.resource.id);
+                                 if(singleClient.userId === this.props.resource.id.toString())
                                  // sessionStorage.getItem('credentials')
                                  {
-                                    console.log(singleClient.name);
-                               return <p className="clientCardName">{singleClient.name}</p>
+                                    console.log("This is singleClient.name", singleClient.name);
+                               return (<p className="clientCardName">{singleClient.name}</p>)
                                 }
                         })}
                         <button className='nav-button' onClick={this.hideModal}>Close Modal</button>
