@@ -25,7 +25,7 @@ export default class ClientForm extends Component {
   };
 
   /*
-        Local method for validation, creating animal object, and
+        Local method for validation, creating client object, and
         invoking the function reference passed from parent component
      */
   constructNewClient = evt => {
@@ -116,8 +116,8 @@ export default class ClientForm extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="">History</label>
-            <input
-              type="text"
+            <textarea
+              type="textarea"
               required
               className="form-control"
               onChange={this.handleFieldChange}
